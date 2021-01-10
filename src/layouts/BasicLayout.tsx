@@ -69,13 +69,13 @@ const defaultFooterDom = (
       {
         key: 'github',
         title: <><GithubOutlined /> 支持项目</>,
-        href: 'https://github.com/liyupi/CodeNav',
+        href: 'https://github.com/liyupi/code-nav',
         blankTarget: true,
       },
       {
         key: 'contact',
         title: <Tooltip title={<img src={wechat} alt="微信 code_nav" width="200" />}><WechatOutlined /> 联系作者</Tooltip>,
-        href: 'https://github.com/liyupi/CodeNav',
+        href: 'https://github.com/liyupi/code-nav/blob/master/README.md#%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85',
         blankTarget: false,
       },
     ]}
