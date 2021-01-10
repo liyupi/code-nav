@@ -13,7 +13,7 @@
 
 ## 项目展示
 
-![编程导航](https://images2018.cnblogs.com/blog/978388/201805/978388-20180511085830837-1284186165.png)
+![编程导航](https://gitee.com/yupi/picture/raw/master/image-20210110125903186.png)
 
 ![轻松生成你的专属炫酷主页](https://gitee.com/yupi/picture/raw/master/image-20210110130446152.png)
 
