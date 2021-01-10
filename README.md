@@ -14,9 +14,9 @@
 
 ## 项目展示
 
-![编程导航](https://gitee.com/yupi/picture/raw/master/image-20210110125903186.png)
+![编程导航](./doc/codeNav.png)
 
-![轻松生成你的专属炫酷主页](https://gitee.com/yupi/picture/raw/master/image-20210110130446152.png)
+![轻松生成你的专属炫酷主页](./doc/codeNavSelf.png)
 
 
 ## 写在前面
@@ -95,9 +95,9 @@
 
    
 
-   ![仅开发环境可见的 Umi UI 按钮](https://gitee.com/yupi/picture/raw/master/image-20210110124900896.png)
+   ![仅开发环境可见的 Umi UI 按钮](./doc/umiButton.png)
 
-   ![从模板新建页面](https://gitee.com/yupi/picture/raw/master/image-20210110124955182.png)
+   ![从模板新建页面](./doc/umiTmp.png)
 
    如果模板图标无法加载，请在本地配置 hosts：`151.101.64.133 raw.githubusercontent.com`
 
