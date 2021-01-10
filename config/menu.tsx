@@ -5,7 +5,7 @@ import {
 } from '@ant-design/icons';
 
 /**
- * 菜单项
+ * 菜单项，可以从服务器动态拉取
  */
 export default [
   {
