@@ -1,0 +1,71 @@
+@import '~antd/es/style/themes/default.less';
+
+/**
+ * 卡片样式
+ */
+.cardList {
+  column-count: 1;
+
+  .card {
+    :global {
+      .ant-card-meta-title {
+        margin-bottom: 12px;
+        & > a {
+          display: inline-block;
+          max-width: 100%;
+          color: @heading-color;
+        }
+      }
+
+      .ant-card-body:hover {
+        .ant-card-meta-title > a {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-list .ant-list-item-content-single {
+      max-width: 100%;
+    }
+
+    .ant-list-item {
+      padding-top: 0;
+      border-bottom: 0;
+      height: 100%;
+      overflow: auto;
+      -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+      page-break-inside: avoid; /* Firefox */
+      break-inside: avoid; /* IE 10+ */
+    }
+
+    .ant-list-pagination {
+      column-span: all;
+    }
+  }
+}
+
+@media screen and (min-width: @screen-sm) {
+  .cardList {
+    column-count: 2;
+    -moz-column-count: 2; /* Firefox */
+    -webkit-column-count: 2; /* Safari and Chrome */
+  }
+}
+
+@media screen and (min-width: @screen-xl) {
+  .cardList {
+    column-count: 3;
+    -moz-column-count: 3; /* Firefox */
+    -webkit-column-count: 3; /* Safari and Chrome */
+  }
+}
+
+@media screen and (min-width: @screen-xxl) {
+  .cardList {
+    column-count: 4;
+    -moz-column-count: 4; /* Firefox */
+    -webkit-column-count: 4; /* Safari and Chrome */
+  }
+}
