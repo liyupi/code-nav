@@ -1,0 +1,280 @@
+html {
+  height: 100%;
+}
+body {
+  background-color: #fff;
+  display: inline;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  height: 100%;
+  line-height: 40px;
+  margin: 0;
+  vertical-align: baseline;
+  -moz-user-select:-moz-none;
+  -ms-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-user-select:none;
+}
+#fail {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  margin-left: -288px;
+  margin-top: -117px;
+}
+@media not screen and (-webkit-transform-3d){
+  #container {
+    visibility: hidden;
+  }
+  #fail {
+    display: block;
+  }
+}
+#bg {
+  background-color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  height: 100%;
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+.graydient {
+  background: #000;
+  background: -moz-radial-gradient(center,ellipse cover,#444 0%,#000000 90%);
+  background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,#444),color-stop(90%,#000000));
+  background: -webkit-radial-gradient(center,ellipse cover,#444 0%,#000000 90%);
+  background: -o-radial-gradient(center,ellipse cover,#444 0%,#000000 90%);
+  background: -ms-radial-gradient(center,ellipse cover,#444 0%,#000000 90%);
+  background: radial-gradient(ellipse at center,#444 0%,#000000 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444',endColorstr='#000000',GradientType=1 );
+}
+.grey {
+  background: #555;
+}
+.white {
+  background: #FFF;
+}
+#container {
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position:relative;
+}
+.text {
+  font-size: 200;
+}
+.text.textDown  { color: #DC422F; }
+.text.textBack  { color: #F5B400; }
+.text.textRight { color: #3D81F6; }
+.shadow {
+  pointer-events: none;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: black;
+  box-shadow: 0 0 100px 80px black;
+  opacity: 0.06;
+  -webkit-transition: opacity 1s;
+     -moz-transition: opacity 1s;
+      -ms-transition: opacity 1s;
+       -o-transition: opacity 1s;
+          transition: opacity 1s;
+}
+.bubble {
+  background: #fff;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  border: 3px solid black;
+  bottom: 4px;
+  line-height: normal;
+  padding: 16px;
+  position: absolute;
+  right: 0;
+}
+.mobile .bubble {
+  background: #000;
+  border: 2px solid #555;
+  bottom: auto;
+  position: absolute;
+  right: 0;
+  top: 44px;
+}
+.pointerdown {
+  bottom: -15px;
+  display: block;
+  height: 15px;
+  margin: 0 0 0 -5px;
+  outline: none;
+  position: absolute;
+  right: 42px;
+}
+.mobile .pointerdown {
+  display: none;
+}
+.pointerup {
+  display: none;
+}
+.mobile .pointerup {
+  top: -15px;
+  display: block;
+  outline: none;
+  position: absolute;
+  right: 68px;
+}
+.bubbleicon {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.fadeTransition {
+  -webkit-transition: opacity 250ms;
+     -moz-transition: opacity 250ms;
+      -ms-transition: opacity 250ms;
+       -o-transition: opacity 250ms;
+          transition: opacity 250ms;
+}
+#sharebubble {
+  display: inline-block;
+  vertical-align: bottom;
+}
+#uibuttons {
+  display: inline-block;
+}
+#buttonpanel {
+  line-height: normal;
+  position: absolute;
+  right: 0;
+}
+#shareshortlink {
+  background: #ddd;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+  outline: none;
+  padding: 10px;
+  vertical-align: top;
+  width: 120px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+#shareshortlink::-ms-clear {
+  display: none;
+}
+#uipanel {
+  bottom: 40px;
+  height: 32px;
+  margin: 0 auto;
+  opacity: 0;
+  position: relative;
+  width: 572px;
+}
+.mobile #uipanel {
+  bottom: auto;
+  top: 4px;
+  right: 4px;
+  width: 100%;
+  position: absolute;
+}
+#movecounter {
+  bottom: -8px;
+  color: #ddd;
+  display: inline-block;
+  font-family: "Rubik One";
+  font-size: 14pt;
+  left: 0;
+  position: absolute;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.mobile #movecounter {
+  bottom: auto;
+  top: 0;
+  color: #555;
+  padding: 4px 20px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+.upgradetext, .helptext {
+  font-family: arial;
+  font-size: 12pt;
+  font-weight: bold;
+  width: 120px;
+  color: #999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.helptext {
+  font-family: arial;
+  font-size: 12pt;
+  font-weight: bold;
+  width: 200px;
+  color: #999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+#helpnext {
+  padding-top: 10px;
+  cursor: pointer;
+}
+#helpimage{
+  width:160px;
+  height: 123px;
+  background-size:160px 123px;
+}
+#helpimage.one{
+  background:no-repeat url(../media/help_rotate.png);
+  width:140px;
+  height: 100px;
+  background-size:140px 100px;
+}
+#helpimage.two{
+  background:no-repeat url(../media/help_twist.png);
+  width:140px;
+  height: 100px;
+  background-size:140px 100px;
+}
+.SPRITE_carrot_grey_up_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) -34px -168px;width:15px;height:15px;background-size:49px 688px}
+.SPRITE_email_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -472px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_facebook_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -304px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_google_plus_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -84px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_help_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -422px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_search_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 0;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_share_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -640px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_twitter_96_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -590px;width:48px;height:48px;background-size:49px 688px}
+.SPRITE_carrot_down_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -556px;width:15px;height:15px;background-size:49px 688px}
+.SPRITE_email_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -270px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_facebook_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -236px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_google_plus_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -354px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_help_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -168px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_help_64_2x:hover{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -50px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_search_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -522px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_search_64_2x:hover{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) -17px -556px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_share_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -134px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_share_64_2x:hover{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -202px;width:32px;height:32px;background-size:49px 688px}
+.SPRITE_twitter_64_2x{background:no-repeat url(/logos/2014/rubiks/sprite-ui.png) 0 -388px;width:32px;height:32px;background-size:49px 688px}

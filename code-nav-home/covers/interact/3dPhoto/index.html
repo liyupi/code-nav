@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- 该模板由编程导航整理，部分素材可能源于网上，侵删，作者微信 code_nav，公众号『 编程导航 』 -->
+  <meta charset="UTF-8">
+  <title>编程导航 - 3D立方</title>
+  <meta name="description" content="编程导航,最专业的程序员导航网站,发现优质编程学习资源,定制你的程序员必备主页" />
+  <meta name="keywords" content="编程,程序员,导航,资源,主页,编程导航" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-image: linear-gradient(68.4deg, rgb(248, 182, 204) 0.5%, rgb(192, 198, 230) 49%, rgb(225, 246, 240) 99.8%)
+    }
+
+    .max-cube,
+    .min-cube {
+      top: 50%;
+      left: 50%;
+
+      color: #FFF;
+      text-align: center;
+
+      position: absolute;
+
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) rotateX(-30deg) rotateY(50deg)
+    }
+
+    .max-cube {
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+
+      animation: maxCubeRotate 20s infinite linear
+    }
+
+    .min-cube {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+
+      animation: minCubeRotate 10s infinite linear
+    }
+
+    .max-cube > span,
+    .min-cube > span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transition: transform .38s ease-in;
+
+      display: block;
+      opacity: .8
+    }
+
+    .max-front {
+      background-image: url(imgs/img-01.jpg);
+      transform: translateZ(150px)
+    }
+
+    .max-back {
+      background-image: url(imgs/img-02.jpg);
+      transform: translateZ(-150px)
+    }
+
+    .max-left {
+      background-image: url(imgs/img-03.jpg);
+      transform: translateX(-150px) rotateY(-90deg)
+    }
+
+    .max-right {
+      background-image: url(imgs/img-04.jpg);
+      transform: translateX(150px) rotateY(90deg)
+    }
+
+    .max-top {
+      background-image: url(imgs/img-05.jpg);
+      transform: translateY(-150px) rotateX(90deg)
+    }
+
+    .max-bottom {
+      background-image: url(imgs/img-06.jpg);
+      transform: translateY(150px) rotateX(-90deg)
+    }
+
+    .min-front {
+      background-image: url(imgs/img-07.jpg);
+      transform: translateZ(50px)
+    }
+
+    .min-back {
+      background-image: url(imgs/img-08.jpg);
+      transform: translateZ(-50px)
+    }
+
+    .min-left {
+      background-image: url(imgs/img-09.jpg);
+      transform: translateX(-50px) rotateY(-90deg)
+    }
+
+    .min-right {
+      background-image: url(imgs/img-01.jpg);
+      transform: translateX(50px) rotateY(90deg)
+    }
+
+    .min-top {
+      background-image: url(imgs/img-02.jpg);
+      transform: translateY(-50px) rotateX(90deg)
+    }
+
+    .min-bottom {
+      background-image: url(imgs/img-03.jpg);
+      transform: translateY(50px) rotateX(-90deg)
+    }
+
+    .max-cube:hover .max-front {
+      transform: translateZ(300px)
+    }
+
+    .max-cube:hover .max-back {
+      transform: translateZ(-300px)
+    }
+
+    .max-cube:hover .max-left {
+      transform: translateX(-300px) rotateY(-90deg)
+    }
+
+    .max-cube:hover .max-right {
+      transform: translateX(300px) rotateY(90deg)
+    }
+
+    .max-cube:hover .max-top {
+      transform: translateY(-300px) rotateX(90deg)
+    }
+
+    .max-cube:hover .max-bottom {
+      transform: translateY(300px) rotateX(-90deg)
+    }
+
+    .min-cube:hover .min-front {
+      transform: translateZ(100px)
+    }
+
+    .min-cube:hover .min-back {
+      transform: translateZ(-100px)
+    }
+
+    .min-cube:hover .min-left {
+      transform: translateX(-100px) rotateY(-90deg)
+    }
+
+    .min-cube:hover .min-right {
+      transform: translateX(100px) rotateY(90deg)
+    }
+
+    .min-cube:hover .min-top {
+      transform: translateY(-100px) rotateX(90deg)
+    }
+
+    .min-cube:hover .min-bottom {
+      transform: translateY(100px) rotateX(-90deg)
+    }
+
+    @keyframes maxCubeRotate {
+      from {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg)
+      }
+      to {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg)
+      }
+    }
+
+    @keyframes minCubeRotate {
+      0% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg)
+      }
+      50% {
+        transform: translate(-50%, -50%) rotateX(200deg) rotateY(200deg)
+      }
+      80% {
+        transform: translate(-50%, -50%) rotateX(100deg) rotateY(150deg)
+      }
+      100% {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg)
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="max-cube">
+    <span class="max-front"></span>
+    <span class="max-back"></span>
+    <span class="max-left"></span>
+    <span class="max-right"></span>
+    <span class="max-top"></span>
+    <span class="max-bottom"></span>
+
+    <div class="min-cube">
+      <span class="min-front"></span>
+      <span class="min-back"></span>
+      <span class="min-left"></span>
+      <span class="min-right"></span>
+      <span class="min-top"></span>
+      <span class="min-bottom"></span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

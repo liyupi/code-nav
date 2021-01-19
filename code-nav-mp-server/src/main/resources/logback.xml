@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+  <!--  <logger name="org.springframework.web" level="INFO"/>-->
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>logs/application.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- Daily rollover with compression -->
+      <fileNamePattern>log/application-log-%d{yyyy-MM-dd}.gz</fileNamePattern>
+      <!-- keep 30 days worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level ${PID:- } [%15.15thread] %-50.50logger{50} -
+        %msg%n
+      </pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta}
+        %clr(---){faint} %clr([%15.15t]){faint} %clr(%-50.50logger{50s}){cyan} %clr(:){faint}
+        %m%n%wEx
+      </pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>logs/error.log</file>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- Daily rollover with compression -->
+      <fileNamePattern>log/error-log-%d{yyyy-MM-dd}.gz</fileNamePattern>
+      <!-- keep 30 days worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level ${PID:- } [%15.15thread] %-50.50logger{50} -
+        %msg%n
+      </pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE"/>
+  </appender>
+
+  <appender name="ASYNC_STDOUT" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="STDOUT"/>
+  </appender>
+
+  <appender name="ASYNC_ERROR" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="ERROR"/>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="ASYNC_FILE"/>
+    <appender-ref ref="ASYNC_STDOUT"/>
+    <appender-ref ref="ASYNC_ERROR"/>
+  </root>
+</configuration>

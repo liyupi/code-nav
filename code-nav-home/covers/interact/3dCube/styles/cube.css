@@ -1,0 +1,100 @@
+.cube {
+ width:  100%;
+ height: 100%;
+}
+.faceLabel {
+ display: none;
+ position: absolute;
+ font-size: 60px;
+ text-align: center;
+ text-shadow: 0 0 24px rgba( 0, 0, 0, 0.3 );
+ color: #FFF;
+}
+.cube .cubelet {
+ width:  1em;
+ height: 1em;
+ position: absolute;
+ box-sizing: border-box;
+}
+.cube /*.cubelet >*/ .face {
+ position: absolute;
+ width:  1em;
+ height: 1em;
+ background-color: #000;
+ text-align: center;
+ -webkit-backface-visibility: hidden;
+   -moz-backface-visibility:    hidden;
+   -o-backface-visibility:      hidden;
+   backface-visibility:         hidden;
+   padding: 0.05em;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -o-box-sizing: border-box;
+   -ms-box-sizing: border-box;
+ box-sizing: border-box;
+}
+.cube /*.cubelet >*/ .face.faceIntroverted { background-color: #000; }
+.cube /*.cubelet >*/ .face.faceTransparent { background-color: transparent; }
+.purty .face { opacity: 0.5; }
+.purty .face.faceFront { background-color: #FFF; }
+.purty .face.faceUp    { background-color: #E87000; }
+.purty .face.faceRight { background-color: #3D81F6; }
+.purty .face.faceDown  { background-color: #DC422F; }
+.purty .face.faceLeft  { background-color: #009D54; }
+.purty .face.faceBack  { background-color: #F5B400; }
+.cube /*.cubelet > */.face > .wireframe {
+ display: none;
+ position: absolute;
+ width:  140px;
+ height: 140px;
+ background-color: rgba( 255, 255, 255, 0.05 );
+}
+.cube .sticker {
+ width:  100%;
+ height: 100%;
+ background-color: #F0F;
+ border-radius: 0.1em;
+ text-align: center;
+}
+.cube .sticker.red   { background: #DC422F; }
+.cube .sticker.white  { background: #F3F3F3; }
+.cube .sticker.blue  { background: #3D81F6;  }
+.cube .sticker.green  { background: #009D54; }
+.cube .sticker.orange  { background: #E87000;  }
+.cube .sticker.yellow  { background: #F5B400;  }
+.cube .sticker.stickerLogo {
+ background: #F3F3F3 url( "../media/rubiksLogoClassic.png" );
+ background-size: 100% 100%;
+ background-repeat: none;
+}
+.cube /*.cubelet >*/ .face > .id {
+ display: none;
+ position: absolute;
+ z-index: 1000;
+ width:  90%;
+ height: 90%;
+ font-size:   1em;
+ line-height: 0.9em;
+ text-align: center;
+ color: #000;
+}
+.cube /*.cubelet >*/ .face > .id > .underline {
+ border-bottom: 1px solid #000;
+}
+.cube /*.cubelet > */.face.faceIntroverted > .id {
+ color: #FEFEFE;
+}
+.cube /*.cubelet >*/ .face.faceIntroverted > .id > .underline {
+ border-bottom: 1px solid #FEFEFE;
+}
+.cube /*.cubelet >*/ .face > .text {
+ display: none;
+ position: absolute;
+ z-index: 2000;
+ width:  100%;
+ height: 100%;
+ text-align: center;
+ color: #FFF;
+ font-size:   1em;
+ line-height: 1em;
+}

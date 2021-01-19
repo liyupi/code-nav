@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- 该模板由编程导航整理，部分素材可能源于网上，侵删，作者微信 code_nav，公众号『 编程导航 』 -->
+  <title>编程导航 - 点线联结</title>
+  <meta name="description" content="编程导航,最专业的程序员导航网站,发现优质编程学习资源,定制你的程序员必备主页" />
+  <meta name="keywords" content="编程,程序员,导航,资源,主页,编程导航" />
+  <style media="screen">
+    canvas {
+      background: #08303E;
+      position: absolute;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript" src="particle.js"></script>
+<script type="text/javascript">
+  var canvas = document.getElementById("canvas"),
+    context = canvas.getContext("2d"),
+    width = canvas.width = window.innerWidth,
+    height = canvas.height = window.innerHeight,
+    dots = [];
+
+  for (var i = 0; i < width / 20; i++) {
+    var dot = particle.create(Math.random() * (width - width / 20) + width / 20, Math.random() * (height - height / 20) + height / 20, 2, Math.random() * Math.PI * 2);
+    dot.color = 'hsl(' + (i % 10) * 30 + ',100%,100%)';
+    dot.size = Math.random() * 3 + 2
+    dot.setSpeed(dot.size / 8)
+    dot.friction = 0.1
+    dots.push(dot)
+
+  }
+  var multiplier = 5;
+  window.onload = function () {
+    window.wallpaperRegisterAudioListener(wallpaperAudioListener);
+    window.wallpaperPropertyListener = {
+      applyUserProperties: function (properties) {
+        if (properties.multiplier) {
+          multiplier = properties.multiplier.value
+        }
+        if (properties.combo) {
+          if (properties.combo.value == 1 && properties.background) {
+            var background = properties.background.value.split(' ').map(function (c) {
+              return Math.ceil(c * 255)
+            })
+            canvas.style.background = 'rgb(' + background + ')'
+          } else if (properties.combo.value == 2 && properties.image) {
+            canvas.style.background = 'url(file:///img)'.replace('img', properties.image.value)
+          }
+        } else {
+          canvas.style.background = "#08303E"
+        }
+      }
+    }
+  };
+  var leftRightAverageLowFreq = 0;
+
+  function wallpaperAudioListener(audioArray) {
+    var lowFreqs = audioArray.slice(0, 5).concat(audioArray.slice(64, 64 + 5));
+    var sum = lowFreqs.reduce((a, b) => a + b, 0);
+    leftRightAverageLowFreq = sum / lowFreqs.length;
+  }
+
+  update()
+  var lol = 0
+
+  function update() {
+    lol++
+    context.clearRect(0, 0, width, height)
+    for (var i in dots) {
+      dots[i].color = 'hsl(' + (i % 5) * 60 + ',100%,a%)'.replace('a', Number(100 - 14 * multiplier * leftRightAverageLowFreq) > 50 ? Number(100 - 14 * multiplier * leftRightAverageLowFreq) : 50)
+      dots[i].update()
+      if (dots[i].x > width || dots[i].x < 0) {
+        dots[i].vx *= -1
+        dots[i].x = dots[i].x > width ? width : 0
+      }
+      if (dots[i].y > height || dots[i].y < 0) {
+        dots[i].vy *= -1
+        dots[i].y = dots[i].y > height ? height : 0
+      }
+      context.beginPath()
+      context.fillStyle = dots[i].color
+      context.moveTo(dots[i].x, dots[i].y)
+      context.arc(dots[i].x, dots[i].y, dots[i].size + 4 * multiplier * leftRightAverageLowFreq < 20 ? dots[i].size + 4 * multiplier * leftRightAverageLowFreq : 20, 0, Math.PI * 2, false);
+      dots[i].setSpeed(dots[i].size / 4 + multiplier * 20 * leftRightAverageLowFreq)
+      context.fill()
+      context.closePath()
+      for (var j in dots) {
+        if (j != i) {
+          var dist = dots[i].distanceTo(dots[j])
+          if (dist < 150) {
+            context.beginPath()
+            context.strokeWidth = 3
+            context.strokeStyle = "rgba(255,255,255,opacity)".replace("opacity", 1 - dist / 150);
+            context.moveTo(dots[i].x, dots[i].y)
+            context.lineTo(dots[j].x, dots[j].y)
+            context.stroke()
+          }
+        }
+      }
+    }
+
+
+    requestAnimationFrame(update)
+  }
+
+  window.onresize = function () {
+    width = canvas.width = window.innerWidth
+    height = canvas.height = window.innerHeight
+    dots = []
+    for (var i = 0; i < width / 20; i++) {
+      var dot = particle.create(Math.random() * (width - width / 20) + width / 20, Math.random() * (height - height / 20) + height / 20, 2, Math.random() * Math.PI * 2);
+      dot.color = 'hsl(' + (i % 10) * 30 + ',100%,100%)';
+      dot.size = Math.random() * 3 + 2
+      dot.setSpeed(dot.size / 8)
+      dot.friction = 0.1
+      dots.push(dot)
+
+    }
+  }
+
+
+</script>
+</html>

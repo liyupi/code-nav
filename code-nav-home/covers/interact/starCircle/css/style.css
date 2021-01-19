@@ -1,0 +1,23 @@
+body {
+  
+  overflow: hidden;
+}
+canvas {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+a {
+  
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: calc( 100% - 200px );
+  top: calc( 100% - 130px );
+}
+img {
+  width: 200px;
+}

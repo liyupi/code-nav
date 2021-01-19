@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- 该模板由编程导航整理，部分素材可能源于网上，侵删，作者微信 code_nav，公众号『 编程导航 』 -->
+  <meta charset="UTF-8">
+  <title>编程导航 - 3D魔方</title>
+  <meta name="description" content="编程导航,最专业的程序员导航网站,发现优质编程学习资源,定制你的程序员必备主页" />
+  <meta name="keywords" content="编程,程序员,导航,资源,主页,编程导航" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="styles/cube.css">
+  <link rel="stylesheet" type="text/css" href="styles/doodle2.css">
+  <link rel="stylesheet" type="text/css" href="styles/certificate2.css">
+
+  <!-- compiled & minified cube code -->
+  <script charset="utf-8" src="scripts/tween.r12.js"></script>
+  <script charset="utf-8" src="scripts/three.js"></script>
+  <script charset="utf-8" src="scripts/cuber.min.js"></script>
+  <style>
+    .cube {
+      background: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+
+<div style="text-align:center;clear:both;">
+  <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+  <script src="/follow.js" type="text/javascript"></script>
+</div>
+
+<div id="bg"></div>
+<div id="container"></div>
+<div id="fail">
+  <img src="media/static-cube.png">
+  <div id="upgradeText" class="bubble fadeTransition">
+    <div class="upgradetext">To play, please use a supported hardware configuration and the latest version of one of
+      these browsers:
+    </div>
+    <br>
+    <a class="upgradetext" href="https://www.google.com/chrome/browser/" target="_blank">Chrome</a><br>
+    <a class="upgradetext" href="https://www.mozilla.org/firefox" target="_blank">Firefox</a><br>
+    <a class="upgradetext" href="https://www.apple.com/safari" target="_blank">Safari</a><br>
+    <span class="pointerleft SPRITE_carrot_down_2x"></span>
+  </div>
+</div>
+<div id="uipanel" class="fadeTransition" style="display:none">
+  <div id="movecounter">0</div>
+  <div id="buttonpanel">
+    <div id="sharebubble" class="fadeTransition" style="opacity:0">
+      <input id="shareshortlink" type="text" value="google.com/doodles" readonly />
+      <div id="sharegplus" class="bubbleicon SPRITE_google_plus_64_2x"></div>
+      <div id="sharefacebook" class="bubbleicon SPRITE_facebook_64_2x"></div>
+      <div id="sharetwitter" class="bubbleicon SPRITE_twitter_64_2x"></div>
+      <div id="shareemail" class="bubbleicon SPRITE_email_64_2x"></div>
+    </div>
+    <div id="uibuttons">
+      <div id="sharebutton" class="bubbleicon SPRITE_share_64_2x"></div>
+      <div id="helpbutton" class="bubbleicon SPRITE_help_64_2x"></div>
+      <div id="searchbutton" class="bubbleicon SPRITE_search_64_2x"></div>
+    </div>
+  </div>
+  <div id="helpbubble" class="bubble" style="display:none">
+    <span class="pointerup SPRITE_carrot_grey_up_2x"></span>
+    <div id="helpimage" class="one"></div>
+    <div id="helptext" class="helptext"></div>
+    <div id="helpnext" class="helptext"></div>
+    <span class="pointerdown SPRITE_carrot_down_2x"></span><br>
+  </div>
+</div>
+<script charset="utf-8" src="scripts/iecss3d.js"></script>
+<script charset="utf-8" src="scripts/ierenderer.js"></script>
+<script charset="utf-8" src="scripts/deviceMotion.js"></script>
+<script charset="utf-8" src="scripts/locked.js"></script>
+<!-- Certificate js -->
+<script charset="utf-8" src="scripts/textBox.js"></script>
+<script charset="utf-8" src="scripts/ResizeableTextBox.3.js"></script>
+<script charset="utf-8" src="scripts/divBox.js"></script>
+<script charset="utf-8" src="scripts/frames.js"></script>
+<script charset="utf-8" src="scripts/certificate.js"></script>
+<script charset="utf-8" src="scripts/main3.js"></script>
+
+</body>
+</html>

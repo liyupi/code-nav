@@ -1,0 +1,122 @@
+#certName, #certSolved{
+ width: 1100px;
+ color: #DC422F;
+ padding: 20px;
+ font-family: "Rubik One", Arial, sans-serif;
+ font-size: 180px;
+ text-align: center;
+ line-height: .97em;
+ text-transform: uppercase;
+}
+#certDate, #certMovesHeader, #certTimeHeader, #certName, #certSolved, #certTimeNumber, #certMovesNumber{
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+            cursor: default;
+}
+#certDate{
+ width: 1000px;
+ color: #000;
+ padding: 20px;
+ font-family: "Rubik One", Arial, sans-serif;
+ text-transform: uppercase;
+ font-size: 110px;
+ text-align:center;
+ line-height: .8em;
+}
+#certMovesHeader, #certTimeHeader {
+ width: 1000px;
+ color: #000;
+ padding: 20px;
+ font-family: "Rubik One", Arial, sans-serif;
+ text-transform: uppercase;
+ font-size: 90px;
+ text-align: center;
+ line-height: .8em;
+}
+#certTimeNumber, #certMovesNumber{
+ width: 1000px;
+ color: #3D81F6;
+ padding: 20px;
+ font-family: "Rubik One", Arial, sans-serif;
+ font-size: 180px;
+ text-align: center;
+ line-height: 1.0em;
+ text-transform: uppercase;
+}
+#certLarryName, #certErnoName{
+ width: 1000px;
+ color: #FF6C00;
+ padding: 20px;
+ font-family: "Rubik One", Arial, sans-serif;
+ font-size: 80px;
+ text-align: center;
+ line-height: 1.0em;
+}
+#larrySignature{
+ width: 1000px;
+ height: 300px;
+ background-image: url("../media/Larry_Signature_400x120.png");
+ background-size: 700px 210px;
+ background-repeat:no-repeat;
+ background-position:center;
+}
+#ernoSignature{
+ width: 1000px;
+ height: 300px;
+ background-image: url("../media/Erno_Signature_400x120.png");
+ background-size: 700px 210px;
+ background-repeat:no-repeat;
+ background-position:center;
+}
+#lineLeft, #lineRight{
+ width: 1000px;
+ height: 10px;
+ background-color: #000;
+ display: inline-block;
+ background-image: url("../media/LogoFaces_0002_white.png");
+ background-repeat: no-repeat;
+ background-position: 100px 100px;
+}
+.logoFace{
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1000;
+  background-size: 100% 100%;
+  background-repeat: none;
+  top: 0px;
+  right: 1px;
+  position:absolute;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background-image: url("../media/LogoFaces_0002_white.png");
+}
+.faceRight .logoFace{
+  background-image:url("../media/LogoFaces_0000_Goo.png");
+}
+.faceDown .logoFace{
+  background-image:url("../media/LogoFaces_0001_gle.png");
+}
+.faceDown .logoFace.ie{
+  -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.cube .sticker.red { background: #DC422F; }
+.cube .sticker.white { background: #FFFFFF; }
+.cube .sticker.blue { background: #3D81F6; }
+.cube .sticker.green { background: #009D54; }
+.cube .sticker.orange { background: #FF6C00; }
+.cube .sticker.yellow { background: #FDCC09; }
+.textBox_IE{
+ z-index: 10;
+ top:0;
+}

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>创建图片</title>
+</head>
+<body background="index.html">
+    <a href="input元素.html" target="_blank"> <!--给图片加超连接-->
+        <img src="1.png" width="128" height="128" alt="无法显示" /><!--alt设置图片备用内容-->
+    </a>
+    
+
+    <img src="1.png" usemap="#map1"/>
+    <form>
+        <input type="image" src="1.png"/>
+    </form>
+    <map name="map1">
+        <area href="input元素.html" shape="rect" coords="2,1,82,94"target="_blank"/><!--shape区域的形状，coords左上右下的大小值-->
+        <!--rect四个整数分别为图像左边缘，上边缘，右边缘，下边缘。
+            circle三个整数分别代表图像左边缘到圆心距离，右边缘到圆心距离，圆的半径。
+            Poly代表一个多边形，至少包含六个逗号分隔的整数组成。每一对数字代表多边形的一个顶点
+            dafault代表默认区域，就是整张图片。不需要coords值-->
+    </map>
+</body>
+</html>

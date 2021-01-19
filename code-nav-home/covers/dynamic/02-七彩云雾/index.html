@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <title>WebGL Fluid Simulation</title>
+        <meta name="description" content="A WebGL fluid simulation that works in mobile browsers.">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Webgl Fluid Simulation">
+        <meta property="og:description" content="A WebGL fluid simulation that works in mobile browsers.">
+        <meta property="og:url" content="https://paveldogreat.github.io/WebGL-Fluid-Simulation/">
+
+        <script type="text/javascript" src="dat.gui.min.js"></script>
+        <style>
+            * {
+                user-select: none;
+            }
+
+            html, body {
+                overflow: hidden;
+            }
+
+            body {
+                margin: 0;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+            }
+
+            canvas {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .dg {
+                opacity: 0.9;
+            }
+
+            .dg .property-name {
+                overflow: visible;
+            }
+
+            .bigFont {
+                font-size: 150%;
+                color: #8C8C8C;
+            }
+
+            .cr.function.appBigFont {
+                font-size: 150%;
+                line-height: 27px;
+                background-color: #2F4F4F;
+            }
+
+            .cr.function.appBigFont .property-name {
+                float: none;
+            }
+
+            .cr.function.appBigFont .icon {
+                position: sticky;
+                bottom: 27px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script src="script.js"></script>
+    </body>
+</html>

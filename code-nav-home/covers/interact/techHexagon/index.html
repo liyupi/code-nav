@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html>
+<head>
+  <!-- 该模板由编程导航整理，部分素材可能源于网上，侵删，作者微信 code_nav，公众号『 编程导航 』 -->
+  <meta charset="UTF-8">
+  <title>编程导航 - 科技六角</title>
+  <meta name="description" content="编程导航,最专业的程序员导航网站,发现优质编程学习资源,定制你的程序员必备主页" />
+  <meta name="keywords" content="编程,程序员,导航,资源,主页,编程导航" />
+
+<style>
+body {
+  background: black;
+  overflow: hidden;
+}
+</style>
+
+</head>
+<body>
+
+<canvas id='canvas-club'></canvas>
+
+
+<script>
+window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+var c = document.getElementById("canvas-club");
+var w = c.width = window.innerWidth;
+var h = c.height = window.innerHeight;
+var ctx = c.getContext("2d");
+
+var maxParticles = 30;
+var particles = [];
+var hue = 183;
+
+mouse = {};
+mouse.size = 200;
+mouse.x = mouse.tx = w/2;
+mouse.y = mouse.ty = h/2;
+
+var clearColor = "rgba(0, 0, 0, .2)";
+
+function random(min, max){
+	return Math.random() * (max - min) + min
+}
+
+function distance(x1, y1, x2, y2){
+	return Math.sqrt( (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) );
+}
+
+function P(){}
+
+P.prototype = {
+	init: function(){
+		this.size = this.origSize = random(10, 100);
+		this.x = random(0, w);
+		this.y = Math.random() > .5 ? -this.size : h + this.size;
+		this.speed = this.origSpeed = random(.01, .03);
+	},
+
+	draw: function(){
+		this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+		ctx.strokeStyle = "hsla("+hue+", 90%, 50%, 1)";
+		ctx.shadowColor = "hsla("+hue+", 100%, 55%, 1)";
+		ctx.shadowBlur = this.size * 2;
+		ctx.beginPath();
+		ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size *  Math.sin(0));
+
+		for(var i=0; i<6; i++){
+			ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i * 2 * Math.PI / 6));
+		}
+
+		ctx.closePath();
+		ctx.lineWidth = 3;
+		ctx.stroke();
+		this.update();
+	},
+
+	update: function(){
+		if(this.distanceFromMouse > 20){
+			this.x += (mouse.x - this.x) * this.speed;
+			this.y += (mouse.y - this.y) * this.speed;
+			if(this.distanceFromMouse < mouse.size){
+				this.size += (0 - this.size) * this.speed;
+				this.speed += .01;
+			} else {
+				this.size += (this.origSize - this.size) * this.speed;
+			}
+		} else {
+				this.init();
+		}
+	}
+}
+
+
+mouse.move = function(){
+	if(!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1){
+  	mouse.x += (mouse.tx - mouse.x) * .2;
+		mouse.y += (mouse.ty - mouse.y) * .2;
+	}
+};
+
+mouse.touches = function(e) {
+	var touches = e.touches;
+	if(touches){
+		mouse.tx = touches[0].clientX;
+		mouse.ty = touches[0].clientY;
+	} else {
+		mouse.tx = e.clientX;
+	  mouse.ty = e.clientY;
+	}
+	e.preventDefault();
+};
+
+mouse.mouseleave = function(e){
+	mouse.tx = w/2;
+	mouse.ty = h/2;
+};
+
+window.addEventListener("mousemove", mouse.touches);
+window.addEventListener("touchstart", mouse.touches);
+window.addEventListener("touchmove", mouse.touches)
+
+c.addEventListener("mouseleave", mouse.mouseleave)
+
+window.addEventListener("resize", function(){
+	w = c.width = window.innerWidth;
+	h = c.height = window.innerHeight;
+});
+
+for(var i=1; i<=maxParticles; i++) {
+	setTimeout(function(){
+		var p = new P();
+		p.init();
+		particles.push(p);
+	}, i * 50);
+}
+
+
+
+function anim(){
+	ctx.fillStyle = clearColor;
+	ctx.shadowColor = clearColor;
+	ctx.shadowBlur = 0;
+	ctx.globalCompositeOperation = "source-over";
+	ctx.fillRect(0,0,w, h);
+	mouse.move();
+
+	for(var i in particles){
+		var p = particles[i];
+		p.draw();
+	}
+	hue++;
+	requestAnimationFrame(anim);
+}
+
+anim();
+
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
+</html>
