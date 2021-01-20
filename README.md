@@ -4,11 +4,11 @@
 
 包含多个子项目，都开源给大家学习，使用这套代码，你也能轻松开发多端适配网站！
 
-编程导航主站 - 发现优质编程资源：https://www.code-nav.cn
+[编程导航主站 - 发现优质编程资源](https://www.code-nav.cn)
 
-编程导航主页 - 程序员必备主页：https://home.code-nav.cn
+[编程导航主页 - 程序员必备主页](https://home.code-nav.cn)
 
-编程导航文档 - 项目使用指南和详情：https://doc.code-nav.cn
+[编程导航文档 - 项目使用指南和详情](https://doc.code-nav.cn) 深入了解项目必读
 
 <br/>
 
