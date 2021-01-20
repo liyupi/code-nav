@@ -12,6 +12,8 @@ toc: menu
 
 全网 ID：程序员鱼皮、编程导航
 
+[我的 GitHub](https://github.com/liyupi/code-nav) 
+
 ## 联系作者
 
 项目贡献、合作共进、交个朋友，戳作者微信叭，请备注来意！（上班比较忙未及时回复还请见谅）

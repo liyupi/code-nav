@@ -16,11 +16,11 @@
 
 [编程导航主站 - 发现优质编程资源](https://www.code-nav.cn) 
 
-![推荐资源](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-recommend.png)
+![推荐资源](./assets/code-nav-recommend.png)
 
 [编程导航主页 - 程序员必备主页](https://home.code-nav.cn)
 
-![透明主页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home.png)
+![透明主页](./assets/code-nav-home.png)
 
 <br/>
 
@@ -112,7 +112,7 @@
 
 > 作者目前于腾讯担任全栈开发工程师，平时工作并不轻松，未及时回复请见谅！
 
-![](https://gitee.com/yupi/picture/raw/master/%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%88%AA%E5%BE%AE%E4%BF%A1.jpeg)
+![微信 code_nav](./assets/wechat.jpg)
 
 <br/>
 
