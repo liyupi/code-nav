@@ -22,31 +22,31 @@
 
 透明主页
 
-![透明主页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home.png)
+![透明主页](./assets/code-nav-home.png)
 
 白底主页
 
-![白底主页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-white.png)
+![白底主页](./assets/code-nav-home-white.png)
 
 万能搜索
 
-<img src="https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-search.png" width="700" />
+<img src="./assets/code-nav-home-search.png" width="700" />
 
 万能搜索结果页
 
-![万能搜索结果页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-searchAll.png)
+![万能搜索结果页](./assets/code-nav-home-searchAll.png)
 
 切换壁纸
 
-![切换壁纸](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-covers.png)
+![切换壁纸](./assets/code-nav-home-covers.png)
 
 随机壁纸
 
-![随机壁纸](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-cover-random.png)
+![随机壁纸](./assets/code-nav-home-cover-random.png)
 
 动态壁纸
 
-![动态壁纸](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-cover.png)
+![动态壁纸](./assets/code-nav-home-cover.png)
 
 ### 已有功能
 
