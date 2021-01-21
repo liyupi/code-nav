@@ -6,9 +6,15 @@
 
 极简炫酷的浏览器主页！支持一键使用多个搜索引擎，主页内置了一些程序员必备优质站点，提升效率，还可以切换主题、定制壁纸等。
 
+在线体验：https://home.code-nav.cn
+
+<br/>
+
 ## 开发者信息
 
 本应用由 [程序员鱼皮](https://github.com/liyupi) 开发提供 🐟
+
+<br/>
 
 ## 使用
 
@@ -51,6 +57,8 @@
 5. 随机壁纸
 6. 透明模式
 
+<br/>
+
 ## 部署
 
 本项目基于腾讯开源项目 [CloudBase Framework](https://github.com/Tencent/cloudbase-framework) [![star](https://img.shields.io/github/stars/Tencent/cloudbase-framework?style=social)](https://github.com/Tencent/cloudbase-framework) 开发部署，支持一键云端部署！
@@ -59,6 +67,7 @@
 
 [![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&tdl_anchor=github&tdl_site=0&appUrl=https://github.com/TencentCloudBase-Marketplace/bitwarden)
 
+<br/>
 
 ## 开发
 
@@ -111,6 +120,8 @@ npx @cloudbase/cli framework deploy -e 环境id
    tcb hosting deploy . -e envId
    ```
 
+<br/>
+
 ## 技术选型
 
 ### 前端
@@ -132,10 +143,14 @@ npx @cloudbase/cli framework deploy -e 环境id
 3. 云托管：使用云托管可以弹性扩缩容，上能应对流量洪峰，下能冷却节约成本
 4. DNSPod：自定义域名解析，网页监控
 
+<br/>
+
 ## 文档
 
 - [CloudBase Framework 文档](https://docs.cloudbase.net/framework/)
 - [编程导航文档](https://doc.code-nav.cn)
+
+<br/>
 
 ## Licence
 
