@@ -55,7 +55,7 @@ const dataList = [
       DEFAULT_COVER,
       {
         name: '樱花飞舞',
-        preview: "/dynamic/sakura/preview.jpg",
+        preview: "/dynamic/sakura/preview.png",
         src: '/dynamic/sakura/index.html',
         type: 'iframe',
       },
