@@ -1,10 +1,18 @@
-# 编程导航主页
+<p align="center">
+  <img height="100px" src="./assets/logo.png" center />
+</p>
 
-[在线访问](https://home.code-nav.cn)
+# [编程导航-程序员必备主页](https://github.com/liyupi/code-nav/tree/master/code-nav-home)
 
-极简的浏览器主页，支持万能搜索，提升效率，还可以定制壁纸和主页站点。
+极简炫酷的浏览器主页！支持一键使用多个搜索引擎，主页内置了一些程序员必备优质站点，提升效率，还可以切换主题、定制壁纸等。
 
-## 项目展示
+## 开发者信息
+
+本应用由 [程序员鱼皮](https://github.com/liyupi) 开发提供 🐟
+
+## 使用
+
+### 项目展示
 
 透明主页
 
@@ -34,7 +42,7 @@
 
 ![动态壁纸](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home-cover.png)
 
-## 已有功能
+### 已有功能
 
 1. 切换搜索
 2. 万能搜索
@@ -43,7 +51,24 @@
 5. 随机壁纸
 6. 透明模式
 
-## 快速开始
+## 部署
+
+本项目基于腾讯开源项目 [CloudBase Framework](https://github.com/Tencent/cloudbase-framework) [![star](https://img.shields.io/github/stars/Tencent/cloudbase-framework?style=social)](https://github.com/Tencent/cloudbase-framework) 开发部署，支持一键云端部署！
+
+点击下方按钮，无需任何操作，即可部署应用 ⬇️
+
+[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&tdl_anchor=github&tdl_site=0&appUrl=https://github.com/TencentCloudBase-Marketplace/bitwarden)
+
+
+## 开发
+
+除了上述一键部署方式外，你也可以下载项目后，使用 [CloudBase CLI](https://docs.cloudbase.net/cli-v1/intro.html) 在终端中一键部署。
+
+```
+npx @cloudbase/cli framework deploy -e 环境id
+```
+
+### 快速开始
 
 **请保证 Node.js 版本 > 10** ⚠️
 
@@ -66,6 +91,8 @@
    npm run start
    ```
    
+   然后可以自由开发和定制主页！
+   
 4. 打包构建
 
    ```bash
@@ -76,11 +103,9 @@
 
 5. 部署
 
-   利用腾讯云云开发实现一键部署，点击下方按钮即可
+   点击上述一键部署按钮可以轻松部署具有弹性扩缩容能力的默认网站应用！
    
-   [![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https://github.com/liyupi/code-nav/tree/master/code-nav-home)
-
-   利用腾讯云静态站点托管：可以直接将 `dist` 目录发布到 [静态站点托管](https://cloud.tencent.com/document/product/876/46900) 中，有 CDN 支持
+   也可以利用腾讯云静态站点托管：可以直接将 `dist` 目录发布到 [静态站点托管](https://cloud.tencent.com/document/product/876/46900) 中，有 CDN 支持
 
    ```bash
    tcb hosting deploy . -e envId
@@ -103,4 +128,15 @@
 后端使用 [腾讯云云开发](https://cloud.tencent.com/product/tcb)，全量上云，充分利用了腾讯云提供的云计算能力。
 
 1. 静态网站托管：CDN 全站加速，一键部署
+2. 云存储：存储壁纸、模板文件等静态资源，同时用 CDN 加速
+3. 云托管：使用云托管可以弹性扩缩容，上能应对流量洪峰，下能冷却节约成本
+4. DNSPod：自定义域名解析，网页监控
 
+## 文档
+
+- [CloudBase Framework 文档](https://docs.cloudbase.net/framework/)
+- [编程导航文档](https://doc.code-nav.cn)
+
+## Licence
+
+开源协议文档请参阅 [LICENSE](./LICENSE)
