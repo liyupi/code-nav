@@ -13,5 +13,7 @@ order: 1
 
 **2. 在公众号内点击 "一键登录" 或回复 "登录" 获取**
 
+如果点了后没反应，请再点一次 😢
+
 <img src="https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/login.jpeg" width="400" />
 
