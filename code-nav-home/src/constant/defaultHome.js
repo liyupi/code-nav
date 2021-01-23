@@ -40,7 +40,7 @@ export default {
         name: "51CTO"
       }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610687861229-jianshu.jpg",
-        link: "https://wangyasai.github.io/",
+        link: "https://www.jianshu.com/",
         name: "简书"
       }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610688420833-infoq.jpg",
