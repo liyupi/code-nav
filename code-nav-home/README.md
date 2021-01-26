@@ -12,7 +12,7 @@
 
 支持一下：[求给倒数第六个作品 "编程主页" 作者鱼皮 投上您宝贵的一票！](https://mp.weixin.qq.com/s/6ALOy5SpKl1aaAop_dCMAw)
 
-[试试一键部署](#%E9%83%A8%E7%BD%B2)
+[试试一键部署吧！](#%E9%83%A8%E7%BD%B2)
 
 <br/>
 
