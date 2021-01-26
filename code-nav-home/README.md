@@ -8,6 +8,10 @@
 
 在线体验：https://home.code-nav.cn
 
+开发过程：https://mp.weixin.qq.com/s/YrCXnYrNw5a0sKiGtpFfHw
+
+支持一下：[求给倒数第六个作品 "编程主页" 作者鱼皮 投上您宝贵的一票！](https://mp.weixin.qq.com/s/6ALOy5SpKl1aaAop_dCMAw)
+
 <br/>
 
 ## 开发者信息
