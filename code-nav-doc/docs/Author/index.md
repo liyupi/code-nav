@@ -10,7 +10,7 @@ toc: menu
 
 作者正在腾讯打工，是一名全栈工程师，致力技术分享。
 
-全网 ID：程序员鱼皮、编程导航
+全网 ID：[程序员鱼皮](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/yupi_wechat.png)、编程导航
 
 [我的 GitHub](https://github.com/liyupi/code-nav) 
 
