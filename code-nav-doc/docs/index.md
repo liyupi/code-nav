@@ -59,3 +59,10 @@ footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [编程导�
 **编程导航微信**
 
 ![编程导航微信](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/wechat.jpg)
+
+
+## 免责声明
+
+郑重承诺！本站所有资源皆收集于互联网，仅供学习交流，严禁用于商业用途！
+
+若发布的内容侵犯到您的权益，请及时联系微信 liyupi66，我们将在第一时间处理，非常抱歉！
