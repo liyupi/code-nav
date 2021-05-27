@@ -10,9 +10,14 @@ toc: menu
 
 ## 项目展示
 
-主页
+文档主页
 
 ![编程导航文档主页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-doc.png)
+
+阅读文档
+
+![阅读文档](https://qiniuyun.code-nav.cn/%E9%98%85%E8%AF%BB%E6%96%87%E6%A1%A3.png)
+
 
 ## 快速开始
 

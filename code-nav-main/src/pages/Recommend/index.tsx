@@ -1,16 +1,15 @@
-import {Button, Empty, List} from 'antd';
-import React, {Component} from 'react';
-
-import {PageContainer} from '@ant-design/pro-layout';
-import {Link} from 'umi';
-import ResourceCard from "@/components/ResourceCard";
-import {ResourceType} from "@/models/resource";
-import styles from './style.less';
-import cardListStyles from '@/cardList.less';
-import {listRecommend} from "@/services/resource";
-import {connect} from "@@/plugin-dva/exports";
-import {ConnectState} from "@/models/connect";
-import {CurrentUser} from "@/models/user";
+import { Button, Empty, List } from 'antd';
+import React, { Component } from 'react';
+import type { ConnectState } from '@/models/connect';
+import { PageContainer } from '@ant-design/pro-layout';
+import { connect, Link } from 'umi';
+import ResourceCard from '@/components/ResourceCard';
+import type { ResourceType } from '@/models/resource';
+import { listRecommendResources, searchResources } from '@/services/resource';
+import type { CurrentUser } from '@/models/user';
+import { history } from '@@/core/history';
+import reviewStatusEnum from '@/constant/reviewStatusEnum';
+import './style.less';
 
 interface RecommendProps {
   currentUser?: CurrentUser;
@@ -18,76 +17,50 @@ interface RecommendProps {
 
 interface RecommendState {
   resources: ResourceType[];
-  initLoading: boolean;
-  moreLoading: boolean;
-  pageNum: number;
-  hasMore: boolean;
+  loading: boolean;
 }
 
-class Recommend extends Component<RecommendProps, RecommendState> {
+const listGrid = {
+  gutter: 16,
+  xs: 1,
+  sm: 1,
+  md: 2,
+  lg: 2,
+  xl: 3,
+  xxl: 3,
+};
 
+class Recommend extends Component<RecommendProps, RecommendState> {
   state = {
     resources: [],
-    initLoading: true,
-    moreLoading: false,
-    pageNum: 1,
-    hasMore: true,
-  }
+    loading: true,
+  };
 
   componentDidMount() {
-    this.doLoadMore(true);
+    this.doLoadMore();
   }
 
-  doLoadMore = async (firstLoad?: boolean) => {
-    const {resources, pageNum} = this.state;
-    if (firstLoad) {
-      this.setState({
-        initLoading: true,
-      })
-    } else {
-      this.setState({
-        moreLoading: true,
-      })
-    }
-    let res = await listRecommend(pageNum, 12);
+  doLoadMore = async () => {
     this.setState({
-      resources: [...resources, ...res],
-      pageNum: pageNum + 1,
-    })
-    if (!res || res.length === 0) {
-      this.setState({
-        hasMore: false
-      })
-    }
-    if (firstLoad) {
-      this.setState({
-        initLoading: false,
-      })
-    } else {
-      this.setState({
-        moreLoading: false
-      })
-    }
-  }
+      loading: true,
+    });
+    const newResources = await searchResources({
+      reviewStatus: reviewStatusEnum.PASS,
+      pageSize: 4,
+    });
+    const recommendResources = await listRecommendResources(12);
+    this.setState({
+      resources: [...newResources, ...recommendResources],
+      loading: false,
+    });
+  };
 
   render() {
-    const {
-      resources,
-      initLoading,
-      moreLoading,
-      hasMore,
-      pageNum,
-    } = this.state;
+    const { resources, loading } = this.state;
 
-    const {currentUser = {} as CurrentUser} = this.props;
+    const { currentUser = {} as CurrentUser } = this.props;
 
-    const content = (
-      <div className={styles.pageHeaderContent}>
-        发现编程世界的满天星辰 ✨
-      </div>
-    );
-
-    const loadMore = !initLoading ? (
+    const loadMore = !loading ? (
       <div
         style={{
           textAlign: 'center',
@@ -95,60 +68,71 @@ class Recommend extends Component<RecommendProps, RecommendState> {
           columnSpan: 'all',
         }}
       >
-        {hasMore ? (
-            pageNum > 1 && !currentUser._id ?
-              <Button type="primary" size='large'><Link to="/user/login">点击登录 查看更多</Link></Button> :
-              <Button type="primary" size='large' loading={moreLoading}
-                      onClick={() => this.doLoadMore(false)}>加载更多</Button>
-          ) :
-          (
-            resources.length > 0 &&
-            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='暂无更多'>
-              <Link to='/addResource'><Button type="primary" size='large'>推荐资源得积分</Button></Link>
-            </Empty>
-          )
-        }
+        {!currentUser._id ? (
+          <Button type="primary" size="large">
+            <Link to="/user/login">点击登录 查看更多</Link>
+          </Button>
+        ) : (
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => {
+              history.push(`/resources/`);
+            }}
+          >
+            更多请前往资源大全
+          </Button>
+        )}
       </div>
     ) : null;
 
-    const extraContent = (
-      <div className={styles.extraImg}>
-        <img
-          alt="图片"
-          src="https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png"
-        />
-      </div>
-    );
     return (
-      <PageContainer content={content} extraContent={extraContent}>
-        <div className={resources && resources.length > 0 ? cardListStyles.cardList : ''}>
-          <List<ResourceType>
-            rowKey="id"
-            loading={initLoading}
-            dataSource={resources}
-            loadMore={loadMore}
-            renderItem={(item) => {
-              return (
-                <List.Item key={item._id}>
-                  <ResourceCard resource={item} loading={initLoading} />
-                </List.Item>
-              );
-            }}
-            locale={{
-              emptyText: <Empty
-                image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description='暂无资源'
-              >
-                <Link to='/addResource'><Button type="primary" size='large'>推荐资源得积分</Button></Link>
-              </Empty>,
-            }}
-          />
-        </div>
+      <PageContainer
+        title="发现资源 ✨"
+        content={
+          <div>
+            站长是腾讯全栈 & 云开发高级布道师，点击关注他的 &nbsp;
+            <a
+              href="https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/yupi_wechat.png"
+              target="_blank"
+              rel="noreferrer"
+            >
+              微信公众号【程序员鱼皮】
+            </a>
+            ，领取 <strong>6T</strong> 私密编程资源！️
+          </div>
+        }
+      >
+        <List<ResourceType>
+          rowKey="_id"
+          loading={loading}
+          dataSource={resources}
+          loadMore={loadMore}
+          grid={listGrid}
+          renderItem={(item) => {
+            return (
+              <List.Item key={item._id}>
+                <ResourceCard resource={item} loading={loading} />
+              </List.Item>
+            );
+          }}
+          locale={{
+            emptyText: (
+              <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无资源">
+                <Link to="/addResource">
+                  <Button type="primary" size="large">
+                    推荐资源得积分
+                  </Button>
+                </Link>
+              </Empty>
+            ),
+          }}
+        />
       </PageContainer>
     );
   }
 }
 
-export default connect(({user}: ConnectState) => ({
+export default connect(({ user }: ConnectState) => ({
   currentUser: user.currentUser,
 }))(Recommend);

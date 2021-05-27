@@ -1,8 +1,4 @@
-<p align="center">
-  <img height="100px" src="./assets/logo.png" center />
-</p>
-
-# [编程导航-程序员必备主页](https://github.com/liyupi/code-nav/tree/master/code-nav-home)
+# [编程导航 - 程序员必备主页](https://github.com/liyupi/code-nav/tree/master/code-nav-home)
 
 极简炫酷的浏览器主页！支持一键使用多个搜索引擎，主页内置了一些程序员必备优质站点，提升效率，还可以切换主题、定制壁纸等。
 
@@ -10,9 +6,7 @@
 
 开发过程：[奇思妙想，动手 DIY 你的浏览器主页](https://mp.weixin.qq.com/s/YrCXnYrNw5a0sKiGtpFfHw)
 
-支持一下：[求给倒数第六个作品 "编程主页" 作者鱼皮 投上您宝贵的一票！](https://mp.weixin.qq.com/s/6ALOy5SpKl1aaAop_dCMAw)
-
-[试试一键部署吧！](#%E9%83%A8%E7%BD%B2)
+🔧 [试试一键部署吧！](#%E9%83%A8%E7%BD%B2)
 
 <br/>
 
@@ -36,7 +30,7 @@
 
 万能搜索
 
-<img src="./assets/code-nav-home-search.png" width="700" />
+![万能搜索](./assets/code-nav-home-search.png)
 
 万能搜索结果页
 
@@ -54,7 +48,9 @@
 
 ![动态壁纸](./assets/code-nav-home-cover.png)
 
-### 已有功能
+
+
+## 已有功能
 
 1. 切换搜索
 2. 万能搜索
@@ -142,7 +138,7 @@ npx @cloudbase/cli framework deploy -e 环境id
 
 ### 后端
 
-后端使用 [腾讯云云开发](https://cloud.tencent.com/product/tcb)，全量上云，充分利用了腾讯云提供的云计算能力。
+后端使用 [腾讯云云开发](https://cloud.tencent.com/product/tcb) ，全量上云，充分利用了腾讯云提供的云计算能力。
 
 1. 静态网站托管：CDN 全站加速，一键部署
 2. 云存储：存储壁纸、模板文件等静态资源，同时用 CDN 加速

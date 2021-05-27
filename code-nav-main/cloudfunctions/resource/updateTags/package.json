@@ -1,0 +1,13 @@
+{
+  "name": "updateTags",
+  "version": "1.0.0",
+  "description": "更新资源标签",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.5.0"
+  }
+}
+

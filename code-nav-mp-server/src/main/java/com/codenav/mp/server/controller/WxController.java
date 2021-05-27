@@ -1,11 +1,8 @@
-package com.yupi.codenavmp.server.controller;
+package com.codenav.mp.server.controller;
 
-import com.google.common.collect.Lists;
-
-import com.yupi.codenavmp.server.constant.CommonConstant;
+import com.codenav.mp.server.constant.CommonConstant;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +14,6 @@ import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
-import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +23,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @name: WxController
- * @author: yupili
- * @create: 2021/1/8
+ * WxController
+ *
+ * @author yupili
  **/
 @RestController
 @RequestMapping("/")
@@ -83,6 +79,16 @@ public class WxController {
     response.getWriter().println("不可识别的加密类型");
   }
 
+  /**
+   * 校验服务器可用
+   *
+   * @param timestamp
+   * @param nonce
+   * @param signature
+   * @param echostr
+   * @return
+   * @throws WxErrorException
+   */
   @GetMapping("/")
   public String check(String timestamp, String nonce, String signature, String echostr)
       throws WxErrorException {
@@ -94,4 +100,34 @@ public class WxController {
     }
   }
 
+  /**
+   * 设置菜单
+   *
+   * @return
+   * @throws WxErrorException
+   */
+  @GetMapping("/setMenu")
+  public String setMenu()
+      throws WxErrorException {
+    LOGGER.info("setMenu");
+    WxMenu wxMenu = new WxMenu();
+    WxMenuButton wxMenuButton1 = new WxMenuButton();
+    wxMenuButton1.setType(MenuButtonType.VIEW);
+    wxMenuButton1.setName("资源推荐");
+    wxMenuButton1.setUrl("https://t.1yb.co/n3QE");
+
+    WxMenuButton wxMenuButton2 = new WxMenuButton();
+    wxMenuButton2.setType(MenuButtonType.CLICK);
+    wxMenuButton2.setName("一键登录");
+    wxMenuButton2.setKey(CommonConstant.LOGIN_MENU_KEY);
+
+    WxMenuButton wxMenuButton3 = new WxMenuButton();
+    wxMenuButton3.setType(MenuButtonType.VIEW);
+    wxMenuButton3.setName("商务合作");
+    wxMenuButton3.setUrl("https://t.1yb.co/n3Qp");
+
+    wxMenu.setButtons(Arrays.asList(wxMenuButton1, wxMenuButton2, wxMenuButton3));
+    mpService.getMenuService().menuCreate(wxMenu);
+    return "";
+  }
 }

@@ -1,28 +1,20 @@
 import {getApp} from "@/tcb";
+import {message} from "antd";
 
-// 云开发对象
 const app = getApp();
 
-/**
- * 上传文件
- * @param file
- */
 export function uploadFile(file: File) {
-  // todo 请求
-  return {
-    fileID: "test",
-  };
+  return app.uploadFile({
+    cloudPath: `img/${new Date().getTime()}-${file.name}`,
+    // @ts-ignore
+    filePath: file,
+  }).catch(e => {
+    message.error('上传失败，请重试');
+  });
 }
 
-/**
- * 下载文件
- * @param fileId
- */
 export function getFileUrl(fileId: any) {
-  // todo 请求
-  return {
-    fileList: [{
-      tempFileURL: "test",
-    }],
-  }
+  return app.getTempFileURL({
+    fileList: [fileId]
+  });
 }

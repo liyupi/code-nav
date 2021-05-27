@@ -2,7 +2,7 @@
 
 > 最专业灵活的编程导航站，发现优质编程学习资源！微信公众号『 编程导航 』
 > 
-> 另外一个项目：[免费编程资源大全](https://github.com/liyupi/free-programming-resources)，对编程导航上的优质资源做了进一步整理！
+> 另外一个项目：[免费编程资源大全](https://github.com/liyupi/free-programming-resources) ，对优质资源做了进一步整理！
 
 本项目包含多个子项目，都开源给大家学习，使用这套代码，你也能轻松开发多端适配网站！
 
@@ -12,15 +12,22 @@
 
 [编程导航文档 - 项目使用指南和详情](https://doc.code-nav.cn) 📚 深入了解项目必读
 
+**编程导航小程序** 📱 在微信中直接搜索资源、浏览优质文章
+
+小程序扫码体验：
+
+![扫码在线体验](https://qiniuyun.code-nav.cn/gh_5532199b4db0_430-20210527001904645.jpg)
+
+
 <br/>
 
 ## 项目展示
 
-[编程导航主站 - 发现优质编程资源](https://www.code-nav.cn) 
+[编程导航 - 发现优质编程资源](https://www.code-nav.cn) 
 
 ![推荐资源](./assets/code-nav-recommend.png)
 
-[编程导航主页 - 程序员必备主页](https://home.code-nav.cn)
+[编程主页 - 程序员必备主页](https://home.code-nav.cn)
 
 ![透明主页](./assets/code-nav-home.png)
 
@@ -83,23 +90,30 @@
 
    极简炫酷的浏览器主页！支持一键使用多个搜索引擎，主页内置了一些程序员必备优质站点，提升效率，还可以切换主题、定制壁纸等。
 
-3. [审核中心](https://doc.code-nav.cn/project/code-nav-review) 👮
-
-   提供资源、评论等内容的审核功能。
-
-4. [编程导航文档](https://doc.code-nav.cn) 📚
+3. [编程导航文档](https://doc.code-nav.cn) 📚
 
    编程导航项目的使用指南和详细介绍。
 
-5. [微信公众号服务端](https://doc.code-nav.cn/project/code-nav-mp-server) 💻
+4. [微信公众号服务端](https://doc.code-nav.cn/project/code-nav-mp-server) 💻
 
    对接编程导航公众号，提供获取动态码、关注回复、动态菜单等功能。
 
-6. [编程导航微信公众号](https://doc.code-nav.cn/author)
+5. [编程导航微信公众号](https://doc.code-nav.cn/author)
 
    定期分享、介绍和评测优质编程资源，不要错过！
 
-7. 编程导航小程序（特喵的没过审，待调整）
+6. 编程导航小程序
+
+<br/>
+
+## 全部功能
+
+一张思维导图足矣。
+
+![](https://qiniuyun.code-nav.cn/%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%88%AA%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%E6%A2%B3%E7%90%86.png)
+
+
+## 站内精品
 
 <br/>
 
@@ -112,15 +126,18 @@
 
 <br/>
 
+
 ## 联系作者
 
 作者微信，添加时请备注事由，开门见山。
 
-> 作者目前于腾讯担任全栈开发工程师，平时工作并不轻松，未及时回复请见谅！
-
 ![微信 code_nav](./assets/wechat.jpg)
 
 <br/>
+
+## 贡献指南
+
+1. [提交产品或 Bug 反馈意见](https://support.qq.com/products/303921)
 
 ## 致谢
 

@@ -8,8 +8,7 @@ export const NoAuth: FC = () => {
   return (
     <Result
       status={403}
-      title="403"
-      subTitle="该页面需要登录才能访问哦"
+      title="登录后即可访问"
       extra={
         <Button type="primary" size="large">
           <Link to={{
@@ -18,7 +17,7 @@ export const NoAuth: FC = () => {
               redirect: window.location.href,
             })
           }}>
-            登录
+            一键登录
           </Link>
         </Button>
       }

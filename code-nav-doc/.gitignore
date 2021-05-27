@@ -23,3 +23,5 @@
 # ide
 /.vscode
 /.idea
+
+.vercel

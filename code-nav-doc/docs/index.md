@@ -36,15 +36,23 @@ footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [编程导�
 
 ## 项目简介
 
-帮助大家发现优质编程学习资源，提高效率！当前主要有 2 个项目：
+帮助大家发现优质编程学习资源，提高效率！当前主要有 3 个项目：
 
 [编程导航主站 - 发现优质编程资源](https://www.code-nav.cn) 
 
-![推荐资源](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-recommend.png)
+![推荐资源](https://qiniuyun.code-nav.cn/%E4%B8%BB%E9%A1%B5-%E6%8E%A8%E8%8D%90%E8%B5%84%E6%BA%90.png)
 
 [编程导航主页 - 程序员必备主页](https://home.code-nav.cn)
 
 ![透明主页](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/code-nav-home.png)
+
+**编程导航小程序**
+
+![小程序](https://qiniuyun.code-nav.cn/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%BB%E9%A1%B5-20210527200801883.png)
+
+小程序二维码：
+
+![](https://qiniuyun.code-nav.cn/gh_5532199b4db0_430.jpg)
 
 
 ## 反馈与共建
@@ -54,7 +62,7 @@ footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [编程导�
 
 **编程导航公众号**
 
-![编程导航公众号](https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/assets/qrcode.jpg) 
+![编程导航公众号](https://qiniuyun.code-nav.cn/qrcode_for_gh_885a2912dab4_430(2).jpg) 
 
 **编程导航微信**
 

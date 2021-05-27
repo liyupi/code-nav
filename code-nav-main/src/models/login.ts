@@ -1,12 +1,12 @@
-import {stringify} from 'querystring';
-import {history, Reducer, Effect} from 'umi';
-
-import {setAuthority} from '@/utils/authority';
-import {getPageQuery} from '@/utils/utils';
-import {message} from 'antd';
-import {login} from "@/services/login";
-import Cookies from "js-cookie";
-import {LOGIN_STATUS} from "@/constant";
+import { stringify } from 'querystring';
+import type { Effect, Reducer } from 'umi';
+import { history } from 'umi';
+import { setAuthority } from '@/utils/authority';
+import { getPageQuery } from '@/utils/utils';
+import { message, notification } from 'antd';
+import { doDailyLogin, login, logout } from '@/services/login';
+import Cookies from 'js-cookie';
+import { LOGIN_STATUS } from '@/constant';
 
 export interface LoginType {
   userId?: string;
@@ -34,21 +34,21 @@ const Model: LoginModelType = {
   },
 
   effects: {
-    * login({payload}, {call, put}) {
+    *login({ payload }, { call, put }) {
       const user = yield call(login, payload);
       if (!user || !user._id) {
-        message.error('登录失败，请重试');
+        message.error('登录失败，请刷新、重获动态码或联系微信 code_nav');
         return;
       }
       const loginStatus = {
         userId: user._id,
         currentAuthority: user.authority ?? 'user',
         type: payload.type,
-      }
+      };
       yield put({
         type: 'setLoginStatus',
         payload: {
-          ...loginStatus
+          ...loginStatus,
         },
       });
       yield put({
@@ -58,19 +58,24 @@ const Model: LoginModelType = {
       // 不存在则设置
       if (!Cookies.get(LOGIN_STATUS)) {
         // 30 天有效期
-        Cookies.set(LOGIN_STATUS, loginStatus, {expires: 30});
+        Cookies.set(LOGIN_STATUS, loginStatus, { expires: 30 });
       }
       // Login successfully
-      message.success(`欢迎您！${user.nickName}`);
+      const isFirstDailyLogin = yield call(doDailyLogin);
+      notification.success({
+        message: `欢迎回来，尊敬的 ${user.nickName}`,
+        description: isFirstDailyLogin ? '每日登录积分 +1' : '',
+        top: 64,
+      });
       if (window.location.pathname === '/user/login') {
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
-        let {redirect} = params as { redirect: string };
+        let { redirect } = params as { redirect: string };
         if (redirect) {
           const redirectUrlParams = new URL(redirect);
           if (redirectUrlParams.origin === urlParams.origin) {
             redirect = redirect.substr(urlParams.origin.length);
-            console.log(redirect)
+            console.log(redirect);
             if (redirect.match(/^\/.*#/)) {
               redirect = redirect.substr(redirect.indexOf('#') + 1);
             }
@@ -79,13 +84,14 @@ const Model: LoginModelType = {
             return;
           }
         }
-        history.replace(redirect || '/home');
+        history.replace(redirect || '/account/info');
       }
     },
 
-    * logout(_, {put}) {
-      const {redirect} = getPageQuery();
+    *logout(_, { put }) {
+      const { redirect } = getPageQuery();
       Cookies.remove(LOGIN_STATUS);
+      logout().then((r) => console.log('logout', r));
       yield put({
         type: 'setLoginStatus',
         payload: {
@@ -96,7 +102,7 @@ const Model: LoginModelType = {
       });
       yield put({
         type: 'user/setCurrentUser',
-        payload: undefined,
+        payload: {},
       });
       // Note: There may be security issues, please note
       if (window.location.pathname !== '/user/login' && !redirect) {
@@ -111,7 +117,7 @@ const Model: LoginModelType = {
   },
 
   reducers: {
-    setLoginStatus(state, {payload}) {
+    setLoginStatus(state, { payload }) {
       setAuthority(payload.currentAuthority);
       return {
         ...state,

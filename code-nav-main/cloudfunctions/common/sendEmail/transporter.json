@@ -1,0 +1,9 @@
+{
+    "service": "qq",
+    "port": 465,
+    "secureConnection": true,
+    "auth": {
+        "user": "xx@qq.com",
+        "pass": "xx"
+    }
+}

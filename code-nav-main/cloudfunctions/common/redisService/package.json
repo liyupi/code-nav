@@ -1,0 +1,18 @@
+{
+  "name": "redisService",
+  "version": "1.0.0",
+  "description": "Redis 服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.code.oa.com:guobinzhang/redis_demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^4.27.3"
+  }
+}

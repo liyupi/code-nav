@@ -1,26 +1,52 @@
-.card {
+.card :global {
   user-select: none;
   width: 100%;
-  max-width: 400px;
   margin: 0 auto;
+
+  .ant-card-body {
+    padding-bottom: 12px;
+  }
+
+  .ant-card-body:hover .ant-card-meta-title {
+    color: #1890ff !important;
+  }
 }
 
 .cardMeta :global {
   .ant-card-meta-avatar {
     width: 35% !important;
-    max-width: 90px;
+    max-width: 80px;
+    padding-right: 0;
+    margin-right: 16px;
   }
 
   .ant-avatar {
     width: 100%;
     height: auto;
-    border-radius: 0;
+    border-radius: 5px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    background: #fafafa;
   }
 
   .ant-card-meta-title {
     font-size: 17px !important;
-    white-space: unset;
-    text-overflow: unset;
   }
 
+  .ant-card-meta-description {
+    min-height: 66px;
+  }
+
+}
+
+.starRate :global {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+
+  .ant-rate-star {
+    margin-right: 1px;
+    margin-left: 1px;
+  }
 }

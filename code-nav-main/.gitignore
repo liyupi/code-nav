@@ -7,18 +7,18 @@
 _roadhog-api-doc
 
 # production
-/dist
+dist
 /.vscode
 
 # misc
 .DS_Store
 npm-debug.log*
+package-lock.json
 yarn-error.log
+yarn.lock
 
 /coverage
-../.idea
-yarn.lock
-package-lock.json
+.idea
 *bak
 .vscode
 

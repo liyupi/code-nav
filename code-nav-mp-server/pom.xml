@@ -8,11 +8,11 @@
         <version>2.3.3.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.codenav</groupId>
+    <groupId>com.yupi</groupId>
     <artifactId>code-nav-mp-server</artifactId>
     <version>0.0.1</version>
-    <name>code-nav-mp-server</name>
-    <description>code-nav-mp-server</description>
+    <name>code-nav mp server</name>
+    <description>code-nav mp server</description>
 
     <properties>
         <java.version>1.8</java.version>

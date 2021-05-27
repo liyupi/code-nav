@@ -1,8 +1,9 @@
-import {List} from 'antd';
-import React, {useEffect, useState} from 'react';
-import {ResourceType} from "@/models/resource";
-import ResourceCard from "@/components/ResourceCard";
-import {search} from "@/services/resource";
+import { List } from 'antd';
+import React, { useEffect, useState } from 'react';
+import type { ResourceType } from '@/models/resource';
+import ResourceCard from '@/components/ResourceCard';
+import { searchResources } from '@/services/resource';
+import reviewStatusEnum from '@/constant/reviewStatusEnum';
 
 interface SimilarResourcesProps {
   // 参照资源
@@ -15,24 +16,27 @@ interface SimilarResourcesProps {
  * @constructor
  */
 const SimilarResources: React.FC<SimilarResourcesProps> = (props) => {
-
-  const {resource} = props;
+  const { resource } = props;
 
   const [resources, setResources] = useState<ResourceType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (resource) {
-      search({
-        category: "test",
+      searchResources({
+        tags: [resource.tags[0]],
         pageSize: 3,
-      }).then((res: ResourceType[]) => {
-        setResources(res);
-      }).finally(() => {
-        setLoading(false);
+        reviewStatus: reviewStatusEnum.PASS,
+        notId: resource._id,
       })
+        .then((res: ResourceType[]) => {
+          setResources(res);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
-  }, [resource])
+  }, [resource]);
 
   return (
     <List<ResourceType>

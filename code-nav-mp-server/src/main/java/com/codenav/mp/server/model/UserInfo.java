@@ -1,11 +1,11 @@
-package com.yupi.codenavmp.server.model;
+package com.codenav.mp.server.model;
 
 import java.io.Serializable;
 
 /**
- * @name: 用户信息
- * @author: yupili
- * @create: 2021/1/8
+ * 用户信息
+ *
+ * @author yupili
  **/
 public class UserInfo implements Serializable {
 

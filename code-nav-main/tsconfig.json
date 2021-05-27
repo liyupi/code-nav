@@ -6,7 +6,8 @@
     "lib": ["esnext", "dom"],
     "sourceMap": true,
     "baseUrl": ".",
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -25,9 +26,15 @@
   "include": [
     "mock/**/*",
     "src/**/*",
+    "tests/**/*",
+    "test/**/*",
+    "__test__/**/*",
     "typings/**/*",
     "config/**/*",
     ".eslintrc.js",
+    ".stylelintrc.js",
+    ".prettierrc.js",
+    "jest.config.js",
     "mock/*"
   ],
   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]

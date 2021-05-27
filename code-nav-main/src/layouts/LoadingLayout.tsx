@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {tcbLogin} from "@/tcb";
-import {Spin} from "antd";
+import {message, Spin} from "antd";
 import Cookies from "js-cookie";
-import {LOGIN_STATUS} from "@/constant";
-import {ConnectProps, Dispatch, LoginType} from "@@/plugin-dva/connect";
+import {DYNAMIC_CAPTCHA, LOGIN_STATUS} from "@/constant";
+import type {ConnectProps, Dispatch, LoginType} from "@@/plugin-dva/connect";
 import {connect} from "umi";
-import {ConnectState} from "@/models/connect";
+import type {ConnectState} from "@/models/connect";
 
 interface LoadingLayoutProps extends Partial<ConnectProps> {
   dispatch: Dispatch;
@@ -19,15 +19,23 @@ interface LoadingLayoutProps extends Partial<ConnectProps> {
  */
 const LoadingLayout: React.FC<LoadingLayoutProps> = (props) => {
 
-  const {children, dispatch, userId} = props;
+  const {children, dispatch, userId, location = {query: {}}} = props;
 
   const [tcbLoading, setTcbLoading] = useState(true);
 
+  // eslint-disable-next-line consistent-return
   function autoLogin() {
     // 自动登录
     if (!userId) {
-      // cookie 登录
-      let loginStatus: LoginType = Cookies.getJSON(LOGIN_STATUS);
+      // 存在登录态 cookie 或者 url 携带 captcha 参数
+      const captcha = location.query[DYNAMIC_CAPTCHA];
+      if (captcha) {
+        return dispatch({
+          type: 'login/login',
+          payload: {captcha, type: 'url'},
+        });
+      }
+      const loginStatus: LoginType = Cookies.getJSON(LOGIN_STATUS);
       if (loginStatus && loginStatus.userId) {
         return dispatch({
           type: 'login/login',
@@ -38,12 +46,17 @@ const LoadingLayout: React.FC<LoadingLayoutProps> = (props) => {
   }
 
   useEffect(() => {
-    tcbLogin().then(async () => {
-      await autoLogin();
-    }).catch(e => {
-    }).finally(() => {
-      setTcbLoading(false);
-    })
+    tcbLogin()
+      .then(async () => {
+        await autoLogin();
+      })
+      .catch((err) => {
+        console.error('tcbLogin error', err);
+        message.error('网络连接失败，请刷新重试！');
+      })
+      .finally(() => {
+        setTcbLoading(false);
+      });
   }, [])
 
   return tcbLoading ?

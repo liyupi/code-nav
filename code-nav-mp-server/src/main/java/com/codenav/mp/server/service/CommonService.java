@@ -1,19 +1,20 @@
-package com.yupi.codenavmp.server.service;
+package com.codenav.mp.server.service;
 
-import com.yupi.codenavmp.server.model.GetCaptchaResponse;
+import com.codenav.mp.server.model.GetCaptchaResponse;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 
 /**
- * @name: 服务
- * @author: yupili
- * @create: 2021/1/8
+ * 公共服务
+ *
+ * @author yupili
  **/
 public interface CommonService {
 
   /**
    * 登录
+   *
    * @param wxMpXmlMessage
    * @param wxMpService
    * @return

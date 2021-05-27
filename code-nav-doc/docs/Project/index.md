@@ -32,21 +32,32 @@ order: 0
 
    极简的浏览器主页，支持万能搜索，提升效率，还可以定制壁纸和主页站点。
 
-3. [审核中心](project/code-nav-review) 👮
-
-   提供资源、评论等内容的审核功能。
-
-4. [编程导航文档](project/code-nav-doc) 📚
+3. [编程导航文档](project/code-nav-doc) 📚
 
    编程导航项目的使用指南和详细介绍。
 
-5. [微信公众号服务端](project/code-nav-mp-server) 💻
+4. [微信公众号服务端](project/code-nav-mp-server) 💻
 
    对接编程导航公众号，提供获取动态码、关注回复、动态菜单等功能。
 
-6. 编程导航微信公众号
+5. 编程导航微信公众号
 
    定期分享、介绍和评测优质编程资源，不要错过！
 
-7. 编程导航小程序（特喵的没过审，待调整）
+   扫码关注：
 
+   ![扫码关注](../assets/qrcode.jpg)
+
+6. [编程导航小程序](project/code-nav-mini)
+
+   方便用户在微信中直接搜索编程资源、浏览优质编程资源推荐文章。
+   
+   扫码体验：
+
+   ![扫码在线体验](https://qiniuyun.code-nav.cn/gh_5532199b4db0_430-20210527001904645.jpg)
+
+## 全部功能
+
+一张思维导图足矣。
+
+![](https://qiniuyun.code-nav.cn/%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%88%AA%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%E6%A2%B3%E7%90%86.png)

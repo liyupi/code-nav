@@ -1,23 +1,22 @@
-package com.yupi.codenavmp.server.bean;
+package com.codenav.mp.server.bean;
 
-import com.yupi.codenavmp.server.handler.LoginHandler;
-import com.yupi.codenavmp.server.handler.SubscribeHandler;
-import java.awt.Event;
-import java.util.Map;
+import com.codenav.mp.server.constant.CommonConstant;
+import com.codenav.mp.server.handler.LoginHandler;
+import com.codenav.mp.server.handler.MessageHandler;
+import com.codenav.mp.server.handler.SubscribeHandler;
 import javax.annotation.Resource;
-import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.api.WxConsts.EventType;
 import me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
-import me.chanjar.weixin.common.error.WxErrorException;
-import me.chanjar.weixin.common.session.WxSessionManager;
-import me.chanjar.weixin.mp.api.WxMpMessageHandler;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
-import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
-import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 微信消息路由
+ *
+ * @author yupili
+ */
 @Configuration
 public class WxMsgRouter {
 
@@ -28,17 +27,26 @@ public class WxMsgRouter {
   private LoginHandler loginHandler;
 
   @Resource
+  private MessageHandler messageHandler;
+
+  @Resource
   private SubscribeHandler subscribeHandler;
 
   @Bean
   public WxMpMessageRouter getWxMsgRouter() {
     WxMpMessageRouter router = new WxMpMessageRouter(wxMpService);
-    // 消息
+    // 登录
     router.rule()
         .async(false)
         .msgType(XmlMsgType.TEXT)
         .rContent("登录|登陆")
         .handler(loginHandler)
+        .end();
+    // 收到消息
+    router.rule()
+        .async(false)
+        .msgType(XmlMsgType.TEXT)
+        .handler(messageHandler)
         .end();
     // 关注
     router.rule()
@@ -52,6 +60,7 @@ public class WxMsgRouter {
         .async(false)
         .msgType(XmlMsgType.EVENT)
         .event(EventType.CLICK)
+        .eventKey(CommonConstant.LOGIN_MENU_KEY)
         .handler(loginHandler)
         .end();
     return router;

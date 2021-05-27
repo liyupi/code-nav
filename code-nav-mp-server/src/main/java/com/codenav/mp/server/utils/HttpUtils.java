@@ -1,4 +1,4 @@
-package com.yupi.codenavmp.server.utils;
+package com.codenav.mp.server.utils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -16,9 +16,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @name: Http 请求工具类
- * @author: yupili
- * @create: 2021/1/8
+ * Http 请求工具类
+ *
+ * @author yupili
  **/
 public class HttpUtils {
 

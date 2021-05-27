@@ -1,9 +1,8 @@
-package com.yupi.codenavmp.server.handler;
+package com.codenav.mp.server.handler;
 
-import com.yupi.codenavmp.server.constant.CommonConstant;
-import com.yupi.codenavmp.server.model.GetCaptchaResponse;
-import com.yupi.codenavmp.server.service.CommonService;
-import java.util.Date;
+import com.codenav.mp.server.constant.CommonConstant;
+import com.codenav.mp.server.model.GetCaptchaResponse;
+import com.codenav.mp.server.service.CommonService;
 import java.util.Map;
 import javax.annotation.Resource;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -15,9 +14,9 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.stereotype.Component;
 
 /**
- * @name: 登录处理器
- * @author: yupili
- * @create: 2021/1/8
+ * 登录处理器
+ *
+ * @author yupili
  **/
 @Component
 public class LoginHandler implements WxMpMessageHandler {
@@ -28,14 +27,16 @@ public class LoginHandler implements WxMpMessageHandler {
   @Override
   public WxMpXmlOutMessage handle(WxMpXmlMessage wxMpXmlMessage, Map<String, Object> map,
       WxMpService wxMpService, WxSessionManager wxSessionManager) throws WxErrorException {
-    // 获取
+    // 获取动态码
     GetCaptchaResponse response = commonService.login(wxMpXmlMessage, wxMpService);
     String content;
     if (response == null) {
-      content = "获取失败，请稍后重试\n";
+      content = "获取失败，请稍后重试\n或联系wx: code_nav";
     } else {
       String captcha = response.getCaptcha();
-      content = String.format("动态码：%s\n请在十分钟内登录", captcha);
+      String directUrl = String.format("%s?dc=%s", CommonConstant.WEB_HOST, captcha);
+      content = String
+          .format("动态码：%s\n请在十分钟内登录 🕑\n或直接访问：<a href=\"%s\">编程导航</a>", captcha, directUrl);
     }
     // 调用接口，返回验证码
     return WxMpXmlOutMessage.TEXT().content(content)

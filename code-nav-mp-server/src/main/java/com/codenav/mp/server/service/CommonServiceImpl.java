@@ -1,10 +1,10 @@
-package com.yupi.codenavmp.server.service;
+package com.codenav.mp.server.service;
 
+import com.codenav.mp.server.constant.CommonConstant;
+import com.codenav.mp.server.model.GetCaptchaResponse;
+import com.codenav.mp.server.model.UserInfo;
+import com.codenav.mp.server.utils.HttpUtils;
 import com.google.gson.Gson;
-import com.yupi.codenavmp.server.constant.CommonConstant;
-import com.yupi.codenavmp.server.model.GetCaptchaResponse;
-import com.yupi.codenavmp.server.model.UserInfo;
-import com.yupi.codenavmp.server.utils.HttpUtils;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +17,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
- * @name: 服务实现类
- * @author: yupili
- * @create: 2021/1/8
+ * 公共服务实现类
+ *
+ * @author yupili
  **/
 @Service
 public class CommonServiceImpl implements CommonService {
@@ -37,10 +37,11 @@ public class CommonServiceImpl implements CommonService {
     String mpOpenId = wxMpUser.getOpenId();
     Map<String, String> params = new HashMap<>();
     params.put("userInfo", gson.toJson(getUserInfo(wxMpUser)));
+    params.put("from", CommonConstant.FROM);
+    params.put("mpOpenId", mpOpenId);
     params.put("unionId", unionId);
-    // 登录接口
-    String url = CommonConstant.WEB_HOST;
-    // 获取
+    String url = CommonConstant.WEB_HOST + "/get_captcha";
+    // 通过 HTTP 调用云函数，获取动态码
     try {
       String jsonResult = HttpUtils.doGet(url, params);
       if (jsonResult == null) {
@@ -53,6 +54,12 @@ public class CommonServiceImpl implements CommonService {
     return null;
   }
 
+  /**
+   * 封装用户信息
+   *
+   * @param wxMpUser
+   * @return
+   */
   private UserInfo getUserInfo(WxMpUser wxMpUser) {
     UserInfo userInfo = new UserInfo();
     userInfo.setProvince(wxMpUser.getProvince());

@@ -1,4 +1,4 @@
-package com.yupi.codenavmp.server;
+package com.codenav.mp.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @name: 启动类
- * @author: yupili
- * @create: 2021/1/8
+ * 启动类（编程导航微信公众号服务端）
+ *
+ * @author 程序员鱼皮
+ * @desc 分享编程学习经验
  **/
 @RestController
 @RequestMapping("/")

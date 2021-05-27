@@ -1,13 +1,14 @@
 import {Alert, message, Tabs, Tooltip} from 'antd';
 import React, {useState} from 'react';
 import ProForm, {ProFormText} from '@ant-design/pro-form';
-import {connect, Dispatch} from 'umi';
-import {LoginType} from '@/models/login';
-import {LoginParamsType} from '@/services/login';
-import {ConnectState} from '@/models/connect';
+import {QrcodeOutlined, QuestionCircleOutlined} from "@ant-design/icons/lib";
+import type { Dispatch} from 'umi';
+import {connect} from 'umi';
+import type {LoginType} from '@/models/login';
+import type {LoginParamsType} from '@/services/login';
+import type {ConnectState} from '@/models/connect';
 import qrcode from '@/assets/qrcode.jpg';
 import styles from './index.less';
-import {QrcodeOutlined, QuestionCircleOutlined} from "@ant-design/icons/lib";
 
 interface LoginProps {
   dispatch: Dispatch;
@@ -34,11 +35,13 @@ const Login: React.FC<LoginProps> = (props) => {
   const [type, setType] = useState<string>('scan');
 
   const handleSubmit = (values: LoginParamsType) => {
-    const {captcha} = values;
+    let {captcha = ""} = values;
+    captcha = captcha.trim();
     if (!captcha || captcha.length !== 6) {
       message.error('请输入 6 位动态码！');
       return;
     }
+    values.captcha = captcha;
     const {dispatch} = props;
     dispatch({
       type: 'login/login',
@@ -49,9 +52,6 @@ const Login: React.FC<LoginProps> = (props) => {
   return (
     <div className={styles.main}>
       <ProForm
-        initialValues={{
-          autoLogin: true,
-        }}
         submitter={{
           render: (_, dom) => dom.pop(),
           submitButtonProps: {
@@ -62,7 +62,7 @@ const Login: React.FC<LoginProps> = (props) => {
             },
           },
         }}
-        onFinish={async (values) => {
+        onFinish={async (values: LoginParamsType) => {
           handleSubmit(values);
         }}
       >
@@ -73,7 +73,7 @@ const Login: React.FC<LoginProps> = (props) => {
           />
         </Tabs>
 
-        {status === 'error' && loginType === 'mobile' && !submitting && (
+        {loginType === 'mobile' && !submitting && (
           <LoginMessage content="验证码错误" />
         )}
         {type === 'scan' && (
@@ -84,7 +84,7 @@ const Login: React.FC<LoginProps> = (props) => {
                 size: 'large',
                 prefix: <QrcodeOutlined className={styles.prefixIcon} />,
                 addonAfter: <>
-                  <Tooltip title="关注后，一键登录获取动态码" placement="topRight" defaultVisible>
+                  <Tooltip title='进入公众号，点一键登录获取动态码' placement="topRight" defaultVisible>
                     <QuestionCircleOutlined style={{color: 'rgba(0,0,0,.45)'}} />
                   </Tooltip>
                 </>

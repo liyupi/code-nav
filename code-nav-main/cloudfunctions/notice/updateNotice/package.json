@@ -1,0 +1,12 @@
+{
+  "name": "updateNotice",
+  "version": "1.0.0",
+  "description": "更新公告",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.5.0"
+  }
+}

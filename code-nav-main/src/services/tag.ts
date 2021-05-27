@@ -1,32 +1,24 @@
 import {getApp} from "@/tcb";
-import {TagType} from "@/models/tag";
+import {getMockData, MOCK_OPEN} from "../../mock";
 
-// 云开发对象
 const app = getApp();
-const db = app.database();
 
 /**
- * 搜索参数
+ * 获取标签
  */
-export interface TagSearchParams {
-}
+export function getTags() {
+  if (MOCK_OPEN) {
+    return getMockData(getTags.name);
+  }
 
-/**
- * 新增
- * @param params
- * @return id
- */
-export function add(params: TagType) {
-  // todo 请求
-  return "id";
-}
-
-/**
- * 搜索
- * @param params
- * @param pageSize
- * @param pageNum
- */
-export function searchByPage(params: TagSearchParams = {}, pageSize?: number, pageNum?: number) {
-
+  return app.callFunction({
+    name: 'getTags',
+    data: {}
+  }).then((res: any) => {
+    console.log(`getTags succeed`);
+    return res.result;
+  }).catch((e: any) => {
+    console.error(`getTags error`, e);
+    return false;
+  });
 }

@@ -1,91 +1,108 @@
-import {LogoutOutlined, SettingOutlined, UserOutlined} from '@ant-design/icons';
-import {Avatar, Dropdown, Menu} from 'antd';
-import React from 'react';
-import {history, ConnectProps, connect, Link} from 'umi';
-import {ConnectState} from '@/models/connect';
-import {CurrentUser} from '@/models/user';
+import React, { useEffect, useState } from 'react';
+import { BellOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import { Avatar, Badge, Dropdown, Menu, Tooltip } from 'antd';
+import type { ConnectProps} from 'umi';
+import { connect, history, Link } from 'umi';
+import type { ConnectState } from '@/models/connect';
+import type { CurrentUser } from '@/models/user';
+import classNames from 'classnames';
+import { countMyMessages } from '@/services/message';
+import { MESSAGE_STATUS_ENUM } from '@/constant/message';
 import styles from './index.less';
-import classNames from "classnames";
 
-export interface GlobalHeaderRightProps extends Partial<ConnectProps> {
-  currentUser?: CurrentUser;
-  menu?: boolean;
+interface GlobalHeaderRightProps extends Partial<ConnectProps> {
+  currentUser: CurrentUser;
 }
 
-class AvatarDropdown extends React.Component<GlobalHeaderRightProps> {
-  onMenuClick = (event: {
+const AvatarDropdown: React.FC<GlobalHeaderRightProps> = (props) => {
+  const { currentUser, location, dispatch } = props;
+  const [unreadMessageNum, setUnreadMessageNum] = useState<number>(0);
+
+  const loadData = async () => {
+    const total = await countMyMessages({ status: MESSAGE_STATUS_ENUM.UNREAD });
+    setUnreadMessageNum(total);
+  };
+
+  useEffect(() => {
+    if (currentUser._id) {
+      loadData();
+    }
+  }, [currentUser]);
+
+  const onMenuClick = (event: {
     key: React.Key;
     keyPath: React.Key[];
     item: React.ReactInstance;
     domEvent: React.MouseEvent<HTMLElement>;
   }) => {
-    const {key} = event;
+    const { key } = event;
+
+    const keyPathMap = {
+      home: '/account/info',
+      message: '/account/message',
+    };
 
     if (key === 'logout') {
-      const {dispatch} = this.props;
-
       if (dispatch) {
         dispatch({
           type: 'login/logout',
         });
       }
-
       return;
     }
 
-    history.push(`/account/${key}`);
+    const path = keyPathMap[key];
+    if (location?.pathname !== path) {
+      history.push(path);
+    }
   };
 
-  render(): React.ReactNode {
-    const {
-      currentUser,
-      menu,
-    } = this.props;
-    const menuHeaderDropdown = (
-      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        {menu && (
-          <Menu.Item key="center">
-            <UserOutlined />
-            个人中心
-          </Menu.Item>
-        )}
-        {menu && (
-          <Menu.Item key="settings">
-            <SettingOutlined />
-            个人设置
-          </Menu.Item>
-        )}
-        {menu && <Menu.Divider />}
-
-        <Menu.Item key="logout">
+  /**
+   * 下拉菜单
+   */
+  const menuHeaderDropdown = (
+    <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
+      <Menu.Item key="home">
+        <UserOutlined />
+        个人中心
+      </Menu.Item>
+      <Menu.Item key="message">
+        <BellOutlined />
+        消息中心
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="logout">
+        <span style={{ color: 'red' }}>
           <LogoutOutlined />
           退出登录
-        </Menu.Item>
-      </Menu>
-    );
-    return currentUser?._id ? (
-      <Dropdown overlayClassName={classNames(styles.container)} overlay={menuHeaderDropdown}>
-        <span className={`${styles.action} ${styles.account}`} onClick={() => {
-          if (location.pathname !== '/home') {
-            history.push('/home');
-          }
-        }}>
-          {currentUser.avatarUrl ? <Avatar size="small" className={styles.avatar} src={currentUser.avatarUrl} />
-            : <Avatar size="small">无</Avatar>
-          }
-          {currentUser.nickName && <span>{currentUser.nickName}</span>}
         </span>
-      </Dropdown>
-    ) : (
-      <Link to='/user/login'>
+      </Menu.Item>
+    </Menu>
+  );
+
+  return currentUser?._id ? (
+    <Dropdown overlayClassName={classNames(styles.container)} overlay={menuHeaderDropdown}>
+      <div className={`${styles.action} ${styles.account}`}>
+        <Badge count={unreadMessageNum}>
+          {currentUser.avatarUrl ? (
+            <Avatar className={styles.avatar} src={currentUser.avatarUrl} />
+          ) : (
+            <Avatar>无</Avatar>
+          )}
+        </Badge>
+      </div>
+    </Dropdown>
+  ) : (
+    <Tooltip title="登录后，享用全部功能" placement="bottomLeft" defaultVisible>
+      <Link to="/user/login">
         <span className={`${styles.action} ${styles.account}`}>
-          <Avatar size="small" icon={<UserOutlined />} /><span style={{marginLeft: 8}}>登录</span>
+          <Avatar icon={<UserOutlined />} />
         </span>
       </Link>
-    );
-  }
-}
+    </Tooltip>
+  );
+};
 
-export default connect(({user}: ConnectState) => ({
+export default connect(({ user }: ConnectState) => ({
   currentUser: user.currentUser,
 }))(AvatarDropdown);

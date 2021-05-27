@@ -1,16 +1,21 @@
-package com.yupi.codenavmp.server.constant;
+package com.codenav.mp.server.constant;
 
 /**
- * @name: 常量
- * @author: yupili
- * @create: 2021/1/8
+ * 常量
+ *
+ * @author yupili
  **/
 public class CommonConstant {
 
   /**
    * 网站域名
    */
-  public static final String WEB_HOST = "https://www.code-nav.cn";
+  public static final String WEB_HOST = "https://xxx";
+
+  /**
+   * 来源
+   */
+  public static final String FROM = "mp";
 
   /**
    * 登录菜单 key

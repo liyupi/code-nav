@@ -1,27 +1,44 @@
-import React, {FC, useEffect, useState} from 'react';
-import {Button, Card, Cascader, Empty, Form, Input, List, Radio, Result} from 'antd';
-import {PageContainer} from '@ant-design/pro-layout';
-import {connect, Link} from 'umi';
-import TagSelect from "@/pages/Resources/TagSelect";
-import {ConnectState} from "@/models/connect";
-import {ResourceType} from "@/models/resource";
-import ResourceCard from "@/components/ResourceCard";
-import {ResourceSearchParams, searchByPage} from "@/services/resource";
-import {MenuOutlined, RiseOutlined, TagsOutlined} from "@ant-design/icons/lib";
-import {CurrentUser} from "@/models/user";
-import {stringify} from "querystring";
-import styles from "@/pages/Recommend/style.less";
-import cardListStyles from "@/cardList.less";
-import {MOCK_FORMS} from "../../../mock/forms";
-import {MOCK_TAGS} from "../../../mock/tags";
+import type { FC } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Button, Card, Empty, Form, List, Radio } from 'antd';
+import { PageContainer } from '@ant-design/pro-layout';
+import { connect, history, Link } from 'umi';
+import type { ConnectState } from '@/models/connect';
+import type { GroupTag, WholeTagsMap } from '@/models/tag';
+import type { ResourceType } from '@/models/resource';
+import ResourceCard from '@/components/ResourceCard';
+import type { ResourceSearchParams } from '@/services/resource';
+import { searchResourcesByPage } from '@/services/resource';
+import reviewStatusEnum from '@/constant/reviewStatusEnum';
+import { RiseOutlined, TagsOutlined } from '@ant-design/icons/lib';
+import type { CurrentUser } from '@/models/user';
+import { CATEGORY_MAP } from '@/constant/categoryMap';
+import { PRE_PAGE_STATE } from '@/constant';
+import { NoAuth } from '@/components/NoAuth';
+import SelectTags from '@/components/SelectTags';
+import './style.less';
 
 interface ResourcesProps {
   match: any;
   location: {
     pathname: string;
+    query: {
+      q?: string;
+    };
   };
   currentUser?: CurrentUser;
+  wholeTagsMap: WholeTagsMap;
 }
+
+const listGrid = {
+  gutter: 16,
+  xs: 1,
+  sm: 1,
+  md: 2,
+  lg: 2,
+  xl: 3,
+  xxl: 3,
+};
 
 const formItemLayout = {
   labelCol: {
@@ -36,237 +53,181 @@ const formItemLayout = {
     },
   },
   wrapperCol: {
-    sm: {
-      span: 12,
-    },
-    lg: {
-      span: 9,
-    },
-    xl: {
-      span: 7,
+    xs: {
+      span: 24,
     },
   },
 };
 
-const Resources: FC<ResourcesProps> = (props) => {
+const PAGE_SIZE = 12;
 
-  const {match, currentUser = {} as CurrentUser} = props;
-  const initSearchParams: ResourceSearchParams = {
-    name: '',
-    form: '',
-    category: match.params.category === 'all' ? '' : match.params.category,
-    pageSize: 12,
+const Resources: FC<ResourcesProps> = (props) => {
+  const { match, currentUser = {} as CurrentUser, location, wholeTagsMap } = props;
+  const { category } = match.params;
+
+  let initSearchParams: ResourceSearchParams = {
+    name: location.query.q ?? '',
+    pageSize: PAGE_SIZE,
     pageNum: 1,
+    tags: category ? [CATEGORY_MAP[category].mapTag] : [],
   };
+
+  // 返回后恢复原搜索条件
+  if (history.action === 'POP') {
+    const jsonStr = localStorage.getItem(PRE_PAGE_STATE);
+    if (jsonStr) {
+      initSearchParams = JSON.parse(jsonStr);
+      localStorage.removeItem(PRE_PAGE_STATE);
+    }
+  }
+
   const [searchParams, setSearchParams] = useState<ResourceSearchParams>(initSearchParams);
   const [total, setTotal] = useState<number>(0);
   const [resources, setResources] = useState<ResourceType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
   const [form] = Form.useForm();
-
-  useEffect(() => {
-    scrollTo({
-      top: 0
-    })
-    setSearchParams(initSearchParams);
-    doSearch(initSearchParams);
-  }, [match.params.category])
+  const title = category ? CATEGORY_MAP[category].name : '资源大全';
+  const [groupTags, setGroupTags] = useState<GroupTag[]>();
 
   const doSearch = (params: ResourceSearchParams) => {
+    setResources([]);
     setLoading(true);
-    searchByPage({...params}).then(res => {
-      setResources(res.data);
-      setTotal(res.total);
-    }).finally(() => {
-      setLoading(false);
-    })
-  }
-
-  const handleTabChange = (key: string) => {
-    const params = key === searchParams.form ? {...searchParams, form: ''} : {...searchParams, form: key};
-    setSearchParams(params);
-    doSearch(params);
+    searchResourcesByPage({ ...params, reviewStatus: reviewStatusEnum.PASS })
+      .then((res) => {
+        setResources(res.data);
+        setTotal(res.total);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
-  const handleFormSubmit = (value: any, event: any) => {
-    doSearch({
-      ...searchParams,
-      name: value,
+  useEffect(() => {
+    // eslint-disable-next-line no-restricted-globals
+    scrollTo({
+      top: 0,
     });
-  };
+    setSearchParams(initSearchParams);
+    form.setFieldsValue(initSearchParams);
+    doSearch(initSearchParams);
+  }, [category, location.query.q]);
 
-  const handleFormEnterSubmit = (e: any) => {
-    doSearch(searchParams);
-  }
+  useEffect(() => {
+    if (category && wholeTagsMap.categoryTagsMap[category]) {
+      setGroupTags([
+        {
+          name: '推荐',
+          tags: wholeTagsMap.categoryTagsMap[category].tags,
+        },
+        ...wholeTagsMap.groupTags,
+      ]);
+    } else {
+      setGroupTags(undefined);
+    }
+  }, [category, wholeTagsMap.categoryTagsMap]);
 
   const handleValuesChange = (changedValues: any) => {
-    // 多级分类只取最后一个
-    if (changedValues.category) {
-      changedValues.category = changedValues.category[changedValues.category.length - 1];
-    }
-    const params = {...searchParams, ...changedValues,};
+    const params = { ...searchParams, ...changedValues, pageNum: 1 };
     setSearchParams(params);
     doSearch(params);
   };
 
-  // todo 应为动态拉取
-  const forms = MOCK_FORMS;
-  const tags = MOCK_TAGS;
-
-  const tabList = forms && forms.map(form => {
-    return {
-      key: form.key,
-      tab: form.name,
-    }
-  });
-
-  const tagSelectView = tags && tags.map(tag => {
-    return <TagSelect.Option key={tag.name} value={tag.name}>{tag.name}</TagSelect.Option>
-  });
-
-  const noMatch = (
-    <Result
-      status={403}
-      title="403"
-      subTitle="该页面需要登录才能访问哦"
-      extra={
-        <Button type="primary" size="large">
-          <Link to={{
-            pathname: '/user/login',
-            search: stringify({
-              redirect: window.location.href,
-            })
-          }}>
-            登录
-          </Link>
-        </Button>
-      }
-    />
-  );
-
-  const mainSearch = (
-    <div style={{textAlign: 'center'}}>
-      <Input.Search
-        placeholder="发现优质资源"
-        enterButton="搜索"
-        size="large"
-        value={searchParams.name}
-        loading={loading}
-        allowClear
-        onChange={e => setSearchParams({...searchParams, name: e.target.value})}
-        onSearch={handleFormSubmit}
-        onPressEnter={handleFormEnterSubmit}
-        style={{maxWidth: 522, width: '100%'}}
-      />
-    </div>
-  );
-
-  const content = (
-    <div className={styles.pageHeaderContent}>
-      <div style={{marginBottom: '16px'}}>当前选项共有 {total} 个资源</div>
-      {mainSearch}
-    </div>
-  );
-
-  return (
-    currentUser._id ?
-      <PageContainer
-        content={content}
-        tabList={tabList}
-        tabProps={{
-          tabBarGutter: 40,
-        }}
-        tabActiveKey={searchParams.form}
-        onTabChange={handleTabChange}
-      >
-        <Card bordered={false} bodyStyle={{paddingBottom: 0}}>
-          <Form
-            {...formItemLayout}
-            form={form}
-            onValuesChange={handleValuesChange}
-            initialValues={{
-              orderKey: '_createTime',
-            }}
-            labelAlign='left'
-          >
-            {
-              match.params.category === 'all' ? <Form.Item
-                label={<><MenuOutlined /> <span style={{marginLeft: 8}}>分类</span></>}
-                name="category"
-                labelAlign="left"
-              >
-                <Cascader
-                  expandTrigger="hover"
-                  allowClear
-                />
-              </Form.Item> : null
+  return currentUser._id ? (
+    <PageContainer title={title}>
+      <Card bordered={false} bodyStyle={{ paddingBottom: 0 }}>
+        <Form
+          {...formItemLayout}
+          form={form}
+          onValuesChange={handleValuesChange}
+          initialValues={{
+            orderKey: '_createTime',
+            ...searchParams,
+          }}
+          labelAlign="left"
+        >
+          <Form.Item
+            label={
+              <>
+                <TagsOutlined /> <span style={{ marginLeft: 8 }}>筛选</span>
+              </>
             }
-            <Form.Item
-              label={<><TagsOutlined /> <span style={{marginLeft: 8}}>标签</span></>}
-              name="tags"
-              labelAlign="left"
-              wrapperCol={{}}
-            >
-              <TagSelect hideCheckAll expandable>
-                {tagSelectView}
-              </TagSelect>
-            </Form.Item>
-            <Form.Item
-              label={<><RiseOutlined /> <span style={{marginLeft: 8}}>排序</span></>}
-              name="orderKey"
-            >
-              <Radio.Group>
-                <Radio.Button value="_createTime">发布时间</Radio.Button>
-                <Radio.Button value="likeNum">喜欢数</Radio.Button>
-                <Radio.Button value="shareNum">分享数</Radio.Button>
-              </Radio.Group>
-            </Form.Item>
-          </Form>
-        </Card>
-        <br />
-        <div className={resources && resources.length > 0 ? cardListStyles.cardList : ''}>
-          <List<ResourceType>
-            rowKey="id"
-            loading={loading}
-            dataSource={resources}
-            pagination={{
-              pageSize: searchParams.pageSize ?? 12,
-              current: searchParams.pageNum ?? 1,
-              showSizeChanger: false,
-              total,
-              onChange(pageNum, pageSize) {
-                const params = {
-                  ...searchParams,
-                  pageSize,
-                  pageNum,
-                };
-                setSearchParams(params);
-                doSearch(params);
-              },
-            }}
-            locale={{
-              emptyText: <Empty
-                image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description='暂无资源'
-              >
-                <Link to='/addResource'><Button type="primary" size='large'>推荐资源得积分</Button></Link>
-              </Empty>,
-            }}
-            renderItem={(item) => {
-              return (
-                <List.Item key={item._id}>
-                  <ResourceCard resource={item} loading={loading} />
-                </List.Item>
-              );
-            }}
-          />
-        </div>
-      </PageContainer> : noMatch
+            name="tags"
+            labelAlign="left"
+          >
+            <SelectTags
+              allTags={wholeTagsMap.allTags}
+              groupTags={groupTags ?? wholeTagsMap.groupTags}
+              maxTagsNumber={5}
+            />
+          </Form.Item>
+          <Form.Item
+            label={
+              <>
+                <RiseOutlined /> <span style={{ marginLeft: 8 }}>排序</span>
+              </>
+            }
+            name="orderKey"
+          >
+            <Radio.Group>
+              <Radio.Button value="_createTime">时间</Radio.Button>
+              <Radio.Button value="rate">评价</Radio.Button>
+              <Radio.Button value="likeNum">收藏</Radio.Button>
+            </Radio.Group>
+          </Form.Item>
+        </Form>
+      </Card>
+      <br />
+      <List<ResourceType>
+        rowKey="_id"
+        loading={loading}
+        dataSource={resources}
+        grid={listGrid}
+        pagination={{
+          pageSize: searchParams.pageSize ?? PAGE_SIZE,
+          current: searchParams.pageNum ?? 1,
+          showSizeChanger: false,
+          total,
+          onChange(pageNum, pageSize) {
+            const params = {
+              ...searchParams,
+              pageSize,
+              pageNum,
+            };
+            setSearchParams(params);
+            doSearch(params);
+          },
+        }}
+        locale={{
+          emptyText: (
+            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无资源">
+              <Link to="/addResource">
+                <Button type="primary" size="large">
+                  推荐资源得积分
+                </Button>
+              </Link>
+            </Empty>
+          ),
+        }}
+        renderItem={(item) => {
+          return (
+            <List.Item key={item._id}>
+              <ResourceCard
+                resource={item}
+                loading={loading}
+                prePageState={searchParams}
+                keyword={searchParams.name}
+              />
+            </List.Item>
+          );
+        }}
+      />
+    </PageContainer>
+  ) : (
+    <NoAuth />
   );
-}
+};
 
-export default connect(({user}: ConnectState) => ({
+export default connect(({ user, tag }: ConnectState) => ({
+  wholeTagsMap: tag.wholeTagsMap,
   currentUser: user.currentUser,
 }))(Resources);
-

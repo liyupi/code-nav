@@ -1,10 +1,12 @@
 // https://umijs.org/config/
-import { defineConfig } from 'umi';
+import {defineConfig} from 'umi';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
 
-const { REACT_APP_ENV } = process.env;
+const {REACT_APP_ENV} = process.env;
+
+const IS_PROD = process.env.NODE_ENV !== 'development';
 
 export default defineConfig({
   hash: true,
@@ -23,6 +25,9 @@ export default defineConfig({
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
   },
+  extraBabelPlugins: [
+    IS_PROD ? 'transform-remove-console' : "",
+  ],
   targets: {
     ie: 11,
   },
@@ -40,4 +45,5 @@ export default defineConfig({
   },
   exportStatic: {},
   esbuild: {},
+  mock: false,
 });

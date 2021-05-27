@@ -4,14 +4,19 @@
   margin-bottom: 24px;
   text-align: center;
 
-  & > img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 24px;
+  :global {
+    .ant-image {
+      margin-bottom: 16px;
+    }
+
+    .ant-image-img {
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   .name {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: @heading-color;
     font-weight: 500;
     font-size: 24px;
@@ -28,6 +33,14 @@
 }
 
 .tagBar {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   user-select: none;
+}
+
+.starRate :global {
+  font-size: 14px;
+
+  .ant-rate-star-first .anticon, .ant-rate-star-second .anticon {
+    vertical-align: text-bottom !important;
+  }
 }

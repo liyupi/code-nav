@@ -1,11 +1,11 @@
-package com.yupi.codenavmp.server.model;
+package com.codenav.mp.server.model;
 
 import java.io.Serializable;
 
 /**
- * @name: GetCaptchaResponse
- * @author: yupili
- * @create: 2021/1/8
+ * GetCaptchaResponse
+ *
+ * @author yupili
  **/
 public class GetCaptchaResponse implements Serializable {
 

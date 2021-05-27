@@ -1,37 +1,50 @@
-import ProLayout, {
-  MenuDataItem,
+import type {
   BasicLayoutProps as ProLayoutProps,
-  DefaultFooter,
+  MenuDataItem,
 } from '@ant-design/pro-layout';
-import React, {useEffect} from 'react';
-import {Link, connect, Dispatch, history} from 'umi';
-import {GithubOutlined} from '@ant-design/icons';
-import {Result, Button, Affix, Tooltip} from 'antd';
+import ProLayout from '@ant-design/pro-layout';
+import React, { useEffect } from 'react';
+import type { Dispatch} from 'umi';
+import { connect, history, Link } from 'umi';
+import {
+  AppstoreOutlined,
+  BarChartOutlined,
+  GlobalOutlined,
+  HomeOutlined,
+  SafetyOutlined,
+  SketchOutlined,
+  UserAddOutlined,
+} from '@ant-design/icons';
+import { Button, Menu, notification, Result } from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
+import HeaderSearch from '@/components/HeaderSearch';
+import GlobalFooter from '@/components/GlobalFooter';
+import SubMenu from 'antd/lib/menu/SubMenu';
+import type { CurrentUser } from '@/models/user';
+import type { ConnectState } from '@/models/connect';
+import { stringify } from 'querystring';
+import { closeNoticeWatcher, openNoticeWatcher } from '@/services/notice';
 import defaultSettings from '../../config/defaultSettings';
-import {AppstoreAddOutlined, WechatOutlined} from "@ant-design/icons/lib";
 import menu from '../../config/menu';
 import logo from '../assets/logo.png';
-import wechat from '../assets/wechat.jpeg';
-import {ConnectState} from "@/models/connect";
-import {CurrentUser} from "@/models/user";
-import {stringify} from "querystring";
+import './BasicLayout.less';
 
 const noMatch = (
   <Result
     status={403}
-    title="403"
-    subTitle="该页面需要登录才能访问哦"
+    title="登录后即可访问"
     extra={
       <Button type="primary" size="large">
-        <Link to={{
-          pathname: '/user/login',
-          search: stringify({
-            redirect: window.location.href,
-          })
-        }}>
-          登录
+        <Link
+          to={{
+            pathname: '/user/login',
+            search: stringify({
+              redirect: window.location.href,
+            }),
+          }}
+        >
+          一键登录
         </Link>
       </Button>
     }
@@ -44,7 +57,8 @@ export interface BasicLayoutProps extends ProLayoutProps {
   };
   dispatch: Dispatch;
   userId?: string;
-  currentUser?: CurrentUser;
+  currentAuthority: string;
+  currentUser: CurrentUser;
 }
 
 /**
@@ -59,28 +73,7 @@ const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] => {
     };
     return Authorized.check(item.authority, localItem, null) as MenuDataItem;
   });
-}
-
-
-const defaultFooterDom = (
-  <DefaultFooter
-    copyright={`2021 编程导航`}
-    links={[
-      {
-        key: 'github',
-        title: <><GithubOutlined /> 支持项目</>,
-        href: 'https://github.com/liyupi/code-nav',
-        blankTarget: true,
-      },
-      {
-        key: 'contact',
-        title: <Tooltip title={<img src={wechat} alt="微信 code_nav" width="200" />}><WechatOutlined /> 联系作者</Tooltip>,
-        href: 'https://github.com/liyupi/code-nav/blob/master/README.md#%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85',
-        blankTarget: false,
-      },
-    ]}
-  />
-);
+};
 
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const {
@@ -92,33 +85,57 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
     },
     userId,
     currentUser,
+    currentAuthority,
   } = props;
 
   useEffect(() => {
-    if (dispatch && userId && !currentUser) {
+    if (dispatch) {
+      dispatch({
+        type: 'tag/get',
+      });
+    }
+    // 公告监听
+    openNoticeWatcher((notice) => {
+      const { title, content } = notice;
+      notification.info({
+        message: title,
+        description: content,
+        top: 64,
+        duration: 10,
+      });
+    });
+    return () => {
+      closeNoticeWatcher();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (dispatch && userId && !currentUser._id) {
       dispatch({
         type: 'user/fetchCurrent',
         payload: {
           userId,
-        }
+        },
       });
     }
   }, []);
 
   // get current page needed authority
-  let authority = undefined;
+  let authority;
 
-  route.routes?.forEach(route => {
-    if (route.path === location.pathname) {
-      authority = route.authority;
+  route.routes?.forEach((r) => {
+    if (r.path === location.pathname) {
+      authority = r.authority;
     }
-  })
+  });
 
   return (
     <ProLayout
       logo={logo}
       {...props}
       {...defaultSettings}
+      layout="side"
+      navTheme="realDark"
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl || !menuItemProps.path) {
@@ -126,28 +143,60 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
         }
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
       }}
-      footerRender={() => defaultFooterDom}
+      footerRender={() => <GlobalFooter />}
       menuDataRender={() => menuDataRender(menu)}
+      headerContentRender={() => (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Menu
+            mode="horizontal"
+            selectedKeys={[location.pathname ?? '/']}
+            onClick={({ key }) => history.push(key)}
+            style={{ height: '100%', border: 0 }}
+          >
+            {currentUser._id && (
+              <Menu.Item key="/account/info" icon={<HomeOutlined />}>
+                个人
+              </Menu.Item>
+            )}
+            <Menu.Item key="/recommend" icon={<SketchOutlined />}>
+              发现
+            </Menu.Item>
+            <Menu.Item key="/resources" icon={<AppstoreOutlined />}>
+              资源
+            </Menu.Item>
+            <SubMenu key="/world" icon={<GlobalOutlined />} title="世界">
+              <Menu.Item key="/friend" icon={<UserAddOutlined />}>
+                找伙伴
+              </Menu.Item>
+              <Menu.Item key="/ranking" icon={<BarChartOutlined />}>
+                激励榜
+              </Menu.Item>
+            </SubMenu>
+            {currentUser._id && currentAuthority.includes('admin') && (
+              <SubMenu key="/review" icon={<SafetyOutlined />} title="运营">
+                <Menu.Item key="/review/resource">审核资源</Menu.Item>
+                <Menu.Item key="/review/comment">审核评论</Menu.Item>
+                <Menu.Item key="/review/report">审核举报</Menu.Item>
+                <Menu.Item key="/review/notice">公告管理</Menu.Item>
+              </SubMenu>
+            )}
+          </Menu>
+          <div className="header-search-bar">
+            <HeaderSearch placeholder="全站搜索编程资源" />
+          </div>
+        </div>
+      )}
       rightContentRender={() => <RightContent />}
     >
       <Authorized authority={authority} noMatch={noMatch}>
         {children}
       </Authorized>
-      {
-        location.pathname !== '/addResource' &&
-        <Affix style={{position: 'fixed', bottom: 24, right: 24}}>
-          <Link to="/addResource">
-            <Tooltip title="推荐资源，收获积分和人气" placement="topLeft">
-              <Button type="primary" shape="circle" icon={<AppstoreAddOutlined />} style={{width: 50, height: 50}} />
-            </Tooltip>
-          </Link>
-        </Affix>
-      }
     </ProLayout>
   );
 };
 
-export default connect(({login, user}: ConnectState) => ({
+export default connect(({ login, user }: ConnectState) => ({
   currentUser: user.currentUser,
   userId: login.userId,
+  currentAuthority: login.currentAuthority,
 }))(BasicLayout);
