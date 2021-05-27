@@ -110,7 +110,7 @@
 
 一张思维导图足矣。
 
-![](https://qiniuyun.code-nav.cn/%E7%BC%96%E7%A8%8B%E5%AF%BC%E8%88%AA%E6%89%80%E6%9C%89%E5%8A%9F%E8%83%BD%E6%A2%B3%E7%90%86.png)
+![](./assets/mind-map.png)
 
 
 ## 站内精品
