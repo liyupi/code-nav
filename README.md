@@ -51,6 +51,10 @@
 
 ![编程导航微信公众号后台](./assets/code-nav-mp-server.png)
 
+[编程导航文档 - 深入了解项目](https://doc.code-nav.cn)
+
+![编程导航文档](./assets/code-nav-doc.png)
+
 <br/>
 
 
