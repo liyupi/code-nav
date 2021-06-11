@@ -13,6 +13,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "yuqing521",
+      "name": "wxy521",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40495740?v=4",
+      "profile": "https://yuqing521.github.io/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
