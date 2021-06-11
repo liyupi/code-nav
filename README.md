@@ -180,6 +180,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://www.code-nav.cn"><img src="https://avatars.githubusercontent.com/u/26037703?v=4?s=100" width="100px;" alt=""/><br /><sub><b>程序员鱼皮</b></sub></a><br /><a href="#ideas-liyupi" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://yuqing521.github.io/"><img src="https://avatars.githubusercontent.com/u/40495740?v=4?s=100" width="100px;" alt=""/><br /><sub><b>wxy521</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=yuqing521" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ringozzt"><img src="https://avatars.githubusercontent.com/u/61344647?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ringo</b></sub></a><br /><a href="#Contributor-Ringo" title="Unity">😉</a></td>
   </tr>
 </table>
 
