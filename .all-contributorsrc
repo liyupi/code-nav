@@ -31,6 +31,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "LeBronChao",
+      "name": "前端LeBron",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62234668?v=4",
+      "profile": "https://github.com/LeBronChao",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
