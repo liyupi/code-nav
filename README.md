@@ -166,7 +166,7 @@
 <br/>
 
 ## 致谢
-liyupi ringozzt
+liyupi ringozzt jonssonyan
 
 
 ## Contributors ✨
