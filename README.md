@@ -166,7 +166,7 @@
 <br/>
 
 ## 致谢
-liyupi
+liyupi，前端LeBron
 
 
 ## Contributors ✨
@@ -180,9 +180,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://www.code-nav.cn"><img src="https://avatars.githubusercontent.com/u/26037703?v=4?s=100" width="100px;" alt=""/><br /><sub><b>程序员鱼皮</b></sub></a><br /><a href="#ideas-liyupi" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://yuqing521.github.io/"><img src="https://avatars.githubusercontent.com/u/40495740?v=4?s=100" width="100px;" alt=""/><br /><sub><b>wxy521</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=yuqing521" title="Code">💻</a></td>
-    <td align="center"><a href="https://lebronchao.com/"><img src="https://avatars.githubusercontent.com/u/62234668?s=400&u=6ce0e9af188958cbab88ec198aa352c7f7b5e0f9&v=4" width="100px;" alt=""/><br /><sub><b>前端LeBron</b></sub></a><br /><a href="https://lebronchao.com/" title="Code">😎</a></td>
   </tr>
 </table>
+
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
