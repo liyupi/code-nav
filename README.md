@@ -166,7 +166,7 @@
 <br/>
 
 ## 致谢
-liyupi
+liyupi ringozzt
 
 
 ## Contributors ✨
