@@ -22,6 +22,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ringozzt",
+      "name": "Ringo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61344647?v=4",
+      "profile": "https://github.com/ringozzt",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "LeBronChao",
+      "name": "前端LeBron",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62234668?v=4",
+      "profile": "https://github.com/LeBronChao",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jonssonyan",
+      "name": "Jonsson Yan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46235235?v=4",
+      "profile": "http://jonssonyan.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
