@@ -166,7 +166,7 @@
 <br/>
 
 ## 致谢
-liyupi ringozzt jonssonyan
+liyupi ringozzt jonssonyan brysonLin247
 
 
 ## Contributors ✨
@@ -183,6 +183,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ringozzt"><img src="https://avatars.githubusercontent.com/u/61344647?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ringo</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=ringozzt" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/LeBronChao"><img src="https://avatars.githubusercontent.com/u/62234668?v=4?s=100" width="100px;" alt=""/><br /><sub><b>前端LeBron</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=LeBronChao" title="Code">💻</a></td>
     <td align="center"><a href="http://jonssonyan.com"><img src="https://avatars.githubusercontent.com/u/46235235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonsson Yan</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=jonssonyan" title="Code">💻</a></td>
+    <td align="center"><a href="http://github.com/brysonLin247"><img src="https://avatars.githubusercontent.com/u/47481681?s=400&v=4" width="100px;" alt=""/><br /><sub><b>brysonLin</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=brysonLin247" title="Code">💻</a></td>
   </tr>
 </table>
 
