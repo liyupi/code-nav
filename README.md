@@ -166,7 +166,7 @@
 <br/>
 
 ## 致谢
-liyupi ringozzt jonssonyan
+liyupi ringozzt jonssonyan 前端LeBron
 
 
 ## Contributors ✨
@@ -185,6 +185,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://jonssonyan.com"><img src="https://avatars.githubusercontent.com/u/46235235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonsson Yan</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=jonssonyan" title="Code">💻</a></td>
   </tr>
 </table>
+
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
