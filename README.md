@@ -1,6 +1,6 @@
 # 编程导航
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > 专业灵活的编程导航站，发现优质编程学习资源！微信公众号『 编程导航 』
@@ -188,6 +188,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://blog.csdn.net/caijunfen"><img src="https://avatars.githubusercontent.com/u/18321599?v=4?s=100" width="100px;" alt=""/><br /><sub><b>腾讯全栈开发  IT-CJF</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=jwcjf" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Florenceliyi"><img src="https://avatars.githubusercontent.com/u/48753252?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Florence</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=Florenceliyi" title="Code">💻</a></td>
   </tr>
 </table>
 
