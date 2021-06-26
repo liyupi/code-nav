@@ -1,6 +1,6 @@
 # 编程导航
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > 专业灵活的编程导航站，发现优质编程学习资源！微信公众号『 编程导航 』
@@ -185,6 +185,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://jonssonyan.com"><img src="https://avatars.githubusercontent.com/u/46235235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonsson Yan</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=jonssonyan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/brysonLin247"><img src="https://avatars.githubusercontent.com/u/47481681?v=4?s=100" width="100px;" alt=""/><br /><sub><b>brysonLin247</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=brysonLin247" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/wenjingyuer"><img src="https://avatars.githubusercontent.com/u/44105523?v=4?s=100" width="100px;" alt=""/><br /><sub><b>wenjingyuer</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=wenjingyuer" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/luoshuai990529"><img src="https://avatars.githubusercontent.com/u/58510855?v=4?s=100" width="100px;" alt=""/><br /><sub><b>luoshuai990529</b></sub></a><br /><a href="https://github.com/liyupi/code-nav/commits?author=luoshuai990529" title="Code">💻</a></td>
   </tr>
 </table>
 
