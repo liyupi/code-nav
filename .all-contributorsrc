@@ -1,0 +1,105 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "liyupi",
+      "name": "程序员鱼皮",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26037703?v=4",
+      "profile": "https://www.code-nav.cn",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "yuqing521",
+      "name": "wxy521",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40495740?v=4",
+      "profile": "https://yuqing521.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ringozzt",
+      "name": "Ringo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61344647?v=4",
+      "profile": "https://github.com/ringozzt",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "LeBronChao",
+      "name": "前端LeBron",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62234668?v=4",
+      "profile": "https://github.com/LeBronChao",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jonssonyan",
+      "name": "Jonsson Yan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46235235?v=4",
+      "profile": "http://jonssonyan.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "brysonLin247",
+      "name": "brysonLin247",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47481681?v=4",
+      "profile": "https://github.com/brysonLin247",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "wenjingyuer",
+      "name": "wenjingyuer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44105523?v=4",
+      "profile": "https://github.com/wenjingyuer",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jwcjf",
+      "name": "腾讯全栈开发  IT-CJF",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18321599?v=4",
+      "profile": "https://blog.csdn.net/caijunfen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Florenceliyi",
+      "name": "Florence",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48753252?v=4",
+      "profile": "https://github.com/Florenceliyi",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "luoshuai990529",
+      "name": "luoshuai990529",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58510855?v=4",
+      "profile": "https://github.com/luoshuai990529",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "code-nav",
+  "projectOwner": "liyupi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
