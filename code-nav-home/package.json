@@ -15,6 +15,7 @@
     "query-string": "^6.13.8",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.13.0",
     "react-static": "^7.2.0",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sitemap": "^7.2.0",
