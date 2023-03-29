@@ -10,7 +10,13 @@ export default {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610686940692-logo.3c8859f8.png",
         link: "https://www.code-nav.cn",
         name: "编程导航"
-      }, {
+      },
+      {
+        icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/chatgpt-logo.png",
+        link: "https://t.zsxq.com/0cb9vuZXi",
+        name: "ChatGPT交流"
+      },
+      {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610687628081-bilibili.png",
         link: "https://www.bilibili.com/",
         name: "Bilibili"
@@ -22,7 +28,7 @@ export default {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/src=http _img3.doubanio.com_lpic_s26866793.jpg&refer=http _img3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg.jpg",
         link: "https://www.csdn.net/",
         name: "CSDN"
-      },  {
+      }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo_87_87.png",
         link: "https://www.nowcoder.com/",
         name: "牛客网"
@@ -38,11 +44,13 @@ export default {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610280843910-510.png",
         link: "https://www.51cto.com/",
         name: "51CTO"
-      }, {
-        icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610687861229-jianshu.jpg",
-        link: "https://www.jianshu.com/",
-        name: "简书"
-      }, {
+      },
+      // {
+      //   icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610687861229-jianshu.jpg",
+      //   link: "https://www.jianshu.com/",
+      //   name: "简书"
+      // },
+      {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610688420833-infoq.jpg",
         link: "https://www.infoq.cn",
         name: "InfoQ"
@@ -50,7 +58,7 @@ export default {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1610941467025-juejin(1).png",
         link: "https://juejin.cn/",
         name: "掘金"
-      },   {
+      }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/tzbv3-ez9gg.png",
         link: "https://segmentfault.com/",
         name: "思否"

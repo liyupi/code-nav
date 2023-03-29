@@ -25,6 +25,10 @@ body {
   margin: 0 16px;
 }
 
+.card .ant-card-grid {
+  float: left;
+}
+
 .site-title {
   font-size: 18px;
   display: inline-block;
