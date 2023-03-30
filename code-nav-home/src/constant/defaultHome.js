@@ -34,7 +34,7 @@ export default {
         name: "牛客网"
       }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/1609848636738-IMG_1307(20210105-200954).JPG",
-        link: "https://leetcode-cn.com/",
+        link: "https://leetcode.cn/",
         name: "LeetCode"
       }, {
         icon: "https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/apple-touch-icon-76.7a750095.png",
