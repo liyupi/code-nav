@@ -96,17 +96,17 @@
 #### 资源
 
 - 视频
-  - ⭐ 韩顺平 - 零基础 30 天学会 Java：https://www.bilibili.com/video/BV1fh411y7R8（900 多集，顺序安排很合理，每个知识真正的打碎了，通俗、有示例、有实战、有思想）
+  - ⭐ 韩顺平 - 零基础 30 天学会 Java：https://www.bilibili.com/video/BV1fh411y7R8 （900 多集，顺序安排很合理，每个知识真正的打碎了，通俗、有示例、有实战、有思想）
 
 - 文档
-  - ⭐ 菜鸟教程：https://www.runoob.com/java/java-tutorial.html（可以在线练习）
+  - ⭐ 菜鸟教程：https://www.runoob.com/java/java-tutorial.html （可以在线练习）
   - 廖雪峰 Java 教程：https://www.liaoxuefeng.com/wiki/1252599548343744
 
 - 书籍
   - 《Head First Java》
 
 - 在线游戏
-  - Codegym：https://codegym.cc/zh（玩玩前几关培养兴趣不错，但后面收费了）
+  - Codegym：https://codegym.cc/zh （玩玩前几关培养兴趣不错，但后面收费了）
 
 
 
@@ -124,7 +124,7 @@
 #### 资源
 
 - 视频
-  - ⭐ 宋红康 - 全网最全Java零基础入门教程：https://www.bilibili.com/video/BV1Kb411W75N（只看 Java 8 部分即可）
+  - ⭐ 宋红康 - 全网最全Java零基础入门教程：https://www.bilibili.com/video/BV1Kb411W75N （只看 Java 8 部分即可）
 
 - 文档
   - ⭐ 菜鸟教程：https://www.runoob.com/java/java8-new-features.html
@@ -229,7 +229,7 @@
 #### 资源
 
 - 文章
-  - ⭐ 刷了 1000 多道算法题，一点心得：https://t.1yb.co/oT9q（鱼皮原创）
+  - ⭐ 刷了 1000 多道算法题，一点心得：https://t.1yb.co/oT9q （鱼皮原创）
 - 在线教程
   - ⭐ LeetCode LeetBook：https://leetcode-cn.com/leetbook/
 - 在线刷题
@@ -243,7 +243,7 @@
   - LeetCode 题解（C++）：https://github.com/soulmachine/leetcode
   - LeetCode Cookbook（Go 语言）：https://github.com/halfrost/LeetCode-Go
 - 视频
-  - 尚硅谷 Java 数据结构与算法：https://www.bilibili.com/video/BV1E4411H73v（难度比面试的要求大一些，适合希望更全面学习的朋友）
+  - 尚硅谷 Java 数据结构与算法：https://www.bilibili.com/video/BV1E4411H73v （难度比面试的要求大一些，适合希望更全面学习的朋友）
   - Leetcode 真题解析：https://www.bilibili.com/video/BV1a54y1b74k
 - 工具
   - VisuAlgo 数据结构和算法动态可视化：https://visualgo.net/zh
@@ -349,8 +349,8 @@
 #### 资源
 
 - 视频
-  - ⭐ 老杜 - mysql入门基础 + 数据库实战：https://www.bilibili.com/video/BV1Vy4y1z7EX（较新、内容相对精炼，有习题）
-  - 尚硅谷 - MySQL基础教程：https://www.bilibili.com/video/BV1xW411u7ax（小姐姐讲课，但感觉音质一般）
+  - ⭐ 老杜 - mysql入门基础 + 数据库实战：https://www.bilibili.com/video/BV1Vy4y1z7EX （较新、内容相对精炼，有习题）
+  - 尚硅谷 - MySQL基础教程：https://www.bilibili.com/video/BV1xW411u7ax （小姐姐讲课，但感觉音质一般）
 
 - 在线练习
   - ⭐ SQL 自学网：http://xuesql.cn/
@@ -482,14 +482,14 @@ Maven / Gradle 当工具用就好，面试基本不问，跟着框架教程去�
 
 - 视频（按顺序看）
 
-  - ⭐ 尚硅谷最新版 JavaWeb 全套教程：https://www.bilibili.com/video/BV1Y7411K7zz（前端部分最好也看下）
+  - ⭐ 尚硅谷最新版 JavaWeb 全套教程：https://www.bilibili.com/video/BV1Y7411K7zz （前端部分最好也看下）
   - ⭐ 尚硅谷 - Spring 5 框架最新版教程（idea版）：https://www.bilibili.com/video/BV1Vf4y127N5
 
   - ⭐ 尚硅谷 - SpringMVC 2021 最新教程：https://www.bilibili.com/video/BV1Ry4y1574R
 
   - ⭐ 尚硅谷 - MyBatis 实战教程全套完整版：https://www.bilibili.com/video/BV1mW411M737
   - ⭐ 尚硅谷 - MyBatisPlus 教程：https://www.bilibili.com/video/BV1Ds411E76Y
-  - Maven 零基础入门教程：https://www.bilibili.com/video/BV1TW411g7hP（搞不懂 Maven 可以看看）
+  - Maven 零基础入门教程：https://www.bilibili.com/video/BV1TW411g7hP （搞不懂 Maven 可以看看）
   - ⭐ 雷丰阳 2021 版 SpringBoot2 零基础入门：https://www.bilibili.com/video/BV19K4y1L7MT
   - 尚硅谷 - SpringSecurity 框架教程：https://www.bilibili.com/video/BV15a411A7kP
 
@@ -524,12 +524,12 @@ Maven / Gradle 当工具用就好，面试基本不问，跟着框架教程去�
 #### 资源
 
 - 书籍
-  - ⭐ 阿里巴巴 Java 开发手册：https://developer.aliyun.com/graph/java（搜索《Java开发手册》）
+  - ⭐ 阿里巴巴 Java 开发手册：https://developer.aliyun.com/graph/java （搜索《Java开发手册》）
 - 视频
   - 华山版《Java开发手册》独家讲解：https://developer.aliyun.com/live/1201
 
 - 文档
-  - Google Java Style Guide：https://google.github.io/styleguide/javaguide.html（谷歌 Java 代码规范）
+  - Google Java Style Guide：https://google.github.io/styleguide/javaguide.html （谷歌 Java 代码规范）
 
 
 
@@ -622,9 +622,9 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 #### 资源
 
 - 视频
-  - ⭐ 2021 韩顺平 一周学会Linux https://www.bilibili.com/video/BV1Sv411r7vd（基于 CentOS 7.6 版本较新）
+  - ⭐ 2021 韩顺平 一周学会Linux https://www.bilibili.com/video/BV1Sv411r7vd （基于 CentOS 7.6 版本较新）
 - 书籍
-  - 《鸟哥的 Linux 私房菜 —— 基础篇》http://cn.linux.vbird.org/linux_basic/linux_basic.php（经典）
+  - 《鸟哥的 Linux 私房菜 —— 基础篇》http://cn.linux.vbird.org/linux_basic/linux_basic.php （经典）
 
 - 文档
   - Linux 工具快速教程：https://linuxtools-rst.readthedocs.io（基础、工具进阶、工具参考）
@@ -803,9 +803,9 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 #### 资源
 
 - 视频
-  - ⭐ 尚硅谷 - 2021 最新 Redis 6 入门到精通教程：https://www.bilibili.com/video/BV1Rv41177Af（基于 Redis 6 的，推荐）
-  - ⭐ 尚硅谷 - 2021 最新 RabbitMQ 教程：https://www.bilibili.com/video/BV1cb4y1o7zz（很新很全面）
-  - ⭐ 尚硅谷 - Nginx 教程由浅入深：https://www.bilibili.com/video/BV1zJ411w7SV（讲的比较全面）
+  - ⭐ 尚硅谷 - 2021 最新 Redis 6 入门到精通教程：https://www.bilibili.com/video/BV1Rv41177Af （基于 Redis 6 的，推荐）
+  - ⭐ 尚硅谷 - 2021 最新 RabbitMQ 教程：https://www.bilibili.com/video/BV1cb4y1o7zz （很新很全面）
+  - ⭐ 尚硅谷 - Nginx 教程由浅入深：https://www.bilibili.com/video/BV1zJ411w7SV （讲的比较全面）
   - ⭐ Nginx 鱼皮 - 手把手带你从0搭建个人网站：https://www.bilibili.com/video/BV1rU4y1J785/ （简单演示 Nginx 部署网站）
 - 文档
   - Redis 命令参考：http://redisdoc.com/
@@ -816,7 +816,7 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
   - 《Redis 实战》（经典）
   - 《RabbitMQ 实战：高效部署分布式消息队列》（经典）
 - 工具
-  - ⭐ Redis 在线练习：https://try.redis.io/（强烈推荐）
+  - ⭐ Redis 在线练习：https://try.redis.io/ （强烈推荐）
   - ⭐ RabbitMQ 在线模拟器：http://tryrabbitmq.com/
   - Nginx 配置在线生成：https://www.digitalocean.com/community/tools/nginx?global.app.lang=zhCN
 
@@ -872,7 +872,7 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 
 - 相关技术
 
-  - Vertx：http://vertxchina.github.io/vertx-translation-chinese/（比 Netty 简单多了，实在看不懂 Netty 也可以学习下这个）
+  - Vertx：http://vertxchina.github.io/vertx-translation-chinese/ （比 Netty 简单多了，实在看不懂 Netty 也可以学习下这个）
 
   
 
@@ -945,13 +945,13 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 
   - ⭐ 尚硅谷 Dubbo 教程：https://www.bilibili.com/video/BV1ns411c7jV
 
-  - ⭐ 尚硅谷 SpringCloud（H版&alibaba）框架开发教程（微服务分布式架构）：https://www.bilibili.com/video/BV18E411x7eT（把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了，真心不错！）
+  - ⭐ 尚硅谷 SpringCloud（H版&alibaba）框架开发教程（微服务分布式架构）：https://www.bilibili.com/video/BV18E411x7eT （把国外的 Spring Cloud 和国内的 Spring Cloud Alibaba 结合在一起对比着去讲，主流技术栈、知识点都讲到了，真心不错！）
 
 - 文档
 
   - Apache Dubbo 官方文档：https://dubbo.apache.org/zh/
   - Spring Cloud Alibaba 官方文档：https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md
-  - ⭐ Swagger 教学文档：https://doc.xiaominfo.com/（跟着快速开始直接用就好了）
+  - ⭐ Swagger 教学文档：https://doc.xiaominfo.com/ （跟着快速开始直接用就好了）
 
   
 
@@ -997,8 +997,8 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
   - 菜鸟教程 Docker：https://www.runoob.com/docker/docker-tutorial.html
   - 国外 Docker 官方文档：https://docs.docker.com/get-started/
 - 网站
-  - Docker 中文社区：https://www.docker.org.cn/（强烈推荐，有很多 Docker 技术文章和学习笔记）
-  - Docker Blog：https://www.docker.com/blog/（国外 Docker 技术博客）
+  - Docker 中文社区：https://www.docker.org.cn/ （强烈推荐，有很多 Docker 技术文章和学习笔记）
+  - Docker Blog：https://www.docker.com/blog/ （国外 Docker 技术博客）
 - 镜像源
   - Docker Hub：https://hub.docker.com
   - 腾讯软件源：http://mirrors.tencent.com/#/index
@@ -1035,8 +1035,8 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 #### 资源
 
 - 视频
-  - ⭐【狂神说】CI/CD到底是什么？十分钟理解企业级DevOps：https://www.bilibili.com/video/BV1zf4y127vu（讲的非常棒！带你快速理解 CI / CD 的作用和部分原理）
-  - 尚硅谷 - Jenkins 持续集成工具教程：https://www.bilibili.com/video/BV1GW411w7pn（实在要用到 Jenkins 再去学）
+  - ⭐【狂神说】CI/CD到底是什么？十分钟理解企业级DevOps：https://www.bilibili.com/video/BV1zf4y127vu （讲的非常棒！带你快速理解 CI / CD 的作用和部分原理）
+  - 尚硅谷 - Jenkins 持续集成工具教程：https://www.bilibili.com/video/BV1GW411w7pn （实在要用到 Jenkins 再去学）
 
 - 文档
 
@@ -1044,8 +1044,8 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 
 - 实战平台
 
-  - ⭐ 微信云托管：https://cloud.weixin.qq.com/cloudrun（直播演示过，鱼皮后面会给大家出视频教程）
-  - 前端托管 Webify：https://cloud.tencent.com/product/webify（鱼皮给大家出过视频教程的 https://www.bilibili.com/video/BV11V411p7vf/）
+  - ⭐ 微信云托管：https://cloud.weixin.qq.com/cloudrun （直播演示过，鱼皮后面会给大家出视频教程）
+  - 前端托管 Webify：https://cloud.tencent.com/product/webify （鱼皮给大家出过视频教程的 https://www.bilibili.com/video/BV11V411p7vf/ ）
 
   
 
@@ -1077,9 +1077,9 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 
 ### 视频教程
 
-- 尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：https://www.bilibili.com/video/BV1dQ4y1A75e（全栈项目，前后端讲得都很全面）
+- 尚硅谷 - 谷粒学院 - 微服务 + 全栈 - 在线教育实战项目：https://www.bilibili.com/video/BV1dQ4y1A75e （全栈项目，前后端讲得都很全面）
 
-- 尚硅谷 - 尚筹网 - Java项目实战开发教程 - SSM 框架 + 微服务架构：https://www.bilibili.com/video/BV1bE411T7oZ（500 多集，包含完整的用户权限管理，功能丰富、讲得很细致全面）
+- 尚硅谷 - 尚筹网 - Java项目实战开发教程 - SSM 框架 + 微服务架构：https://www.bilibili.com/video/BV1bE411T7oZ （500 多集，包含完整的用户权限管理，功能丰富、讲得很细致全面）
 - 黑马 - 24 小时搞定 Java 毕设电商项目：https://www.bilibili.com/video/BV13f4y1r7fS
 - 黑马程序员 Java 项目《传智健康》，超完整的企业级医疗行业项目：https://www.bilibili.com/video/BV1Bo4y117zV
 - 黑马程序员 Java 项目《万信金融》企业级开发实战，互联网金融行业解决方案：https://www.bilibili.com/video/BV1Ub4y1f7rk
@@ -1096,21 +1096,21 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 - 天猫整站 J2EE：https://how2j.cn/module/115.htm
 - 天猫整站 SSM：https://how2j.cn/module/134.html
 - 天猫整站 Springboot：https://how2j.cn/module/156.html
-- mall-learning：https://github.com/macrozheng/mall-learningmall（学习教程，架构、业务、技术要点全方位解析）
+- mall-learning：https://github.com/macrozheng/mall-learningmall （学习教程，架构、业务、技术要点全方位解析）
 - SpringBoot 电商商城系统 Mall4j：https://github.com/gz-yami/mall4j
-- SpringBoot 完整电商系统 Mall：https://github.com/macrozheng/mall（包括前台商城系统及后台管理系统，基于 SpringBoot+MyBatis 实现）
+- SpringBoot 完整电商系统 Mall：https://github.com/macrozheng/mall （包括前台商城系统及后台管理系统，基于 SpringBoot+MyBatis 实现）
 - newbee-mall：https://github.com/newbee-ltd/newbee-mall （一套电商系统，包括 newbee-mall 商城系统及 newbee-mall-admin 商城后台管理系统，基于 Spring Boot 2.X 及相关技术栈开发）
-- paascloud-master：https://github.com/paascloud/paascloud-master（基于 spring cloud + vue + oAuth2.0，前后端分离商城系统）
+- paascloud-master：https://github.com/paascloud/paascloud-master （基于 spring cloud + vue + oAuth2.0，前后端分离商城系统）
 
-- mall-swarm：https://github.com/macrozheng/mall-swarm（一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch 等核心技术，同时提供了基于 Vue 的管理后台方便快速搭建系统）
+- mall-swarm：https://github.com/macrozheng/mall-swarm （一套微服务商城系统，采用了 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch 等核心技术，同时提供了基于 Vue 的管理后台方便快速搭建系统）
 
-- onemall：https://github.com/YunaiV/onemall（mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba）
+- onemall：https://github.com/YunaiV/onemall （mall 商城，基于微服务的思想，构建在 B2C 电商场景下的项目实战。核心技术栈，是 Spring Boot + Dubbo 。未来，会重构成 Spring Cloud Alibaba）
 
-- litemall：https://github.com/linlinjava/litemall（又一个小商城，litemall = Spring Boot 后端 + Vue 管理员前端 + 微信小程序用户前端 + Vue 用户移动端）
+- litemall：https://github.com/linlinjava/litemall （又一个小商城，litemall = Spring Boot 后端 + Vue 管理员前端 + 微信小程序用户前端 + Vue 用户移动端）
 - xmall：https://github.com/Exrick/xmall （基于SOA架构的分布式电商购物商城 前后端分离 前台商城:Vue全家桶 后台管理系统）
 
 - miaosha：https://github.com/qiurunze123/miaosha （秒杀系统设计与实现）
-- SecKill：https://github.com/hfbin/Seckill（基于 SpringBoot+Mybatis+Redis+RabbitMQ 秒杀系统）
+- SecKill：https://github.com/hfbin/Seckill （基于 SpringBoot+Mybatis+Redis+RabbitMQ 秒杀系统）
 
 
 
@@ -1239,8 +1239,8 @@ Git 和它可不一样，是一个版本控制工具，可以更好地管理和�
 #### 资源
 
 - 视频
-  - ⭐【尚硅谷】大厂必备技术之JUC并发编程2021最新版：https://www.bilibili.com/video/BV1Kw411Z7dF（特点是短、精、新）
-  - 黑马程序员全面深入学习Java并发编程：https://www.bilibili.com/video/BV16J411h7Rd（讲的很细、全面深入）
+  - ⭐【尚硅谷】大厂必备技术之JUC并发编程2021最新版：https://www.bilibili.com/video/BV1Kw411Z7dF （特点是短、精、新）
+  - 黑马程序员全面深入学习Java并发编程：https://www.bilibili.com/video/BV16J411h7Rd （讲的很细、全面深入）
 - 书籍
   - ⭐《Java并发编程实战》（国外的经典）
   - ⭐《Java 并发编程艺术》（国人写的，理论思想内容较多，有时间建议反复看）
@@ -1297,8 +1297,8 @@ JVM 的知识略显枯燥，建议先看视频，有实操的地方一定要实�
 #### 资源
 
 - 视频
-  - ⭐ 尚硅谷宋红康 - JVM 全套教程详解：https://www.bilibili.com/video/BV1PJ411n7xZ（讲得相当全面！附有实操）
-  - 【狂神说Java】JVM快速入门篇：https://www.bilibili.com/video/BV1iJ411d7jS（讲得有点浅，但都是面试重点，时间紧的小伙伴可以直接看这个）
+  - ⭐ 尚硅谷宋红康 - JVM 全套教程详解：https://www.bilibili.com/video/BV1PJ411n7xZ （讲得相当全面！附有实操）
+  - 【狂神说Java】JVM快速入门篇：https://www.bilibili.com/video/BV1iJ411d7jS （讲得有点浅，但都是面试重点，时间紧的小伙伴可以直接看这个）
 - 书籍
   - ⭐《深入理解 Java 虚拟机（第三版）》（有理论有实践，内容丰富，不可多得的 JVM 学习神书，就是有点废头发）
 
@@ -1444,7 +1444,7 @@ JVM 的知识略显枯燥，建议先看视频，有实操的地方一定要实�
 
 #### 面经
 
-- ⭐ 2021 最新 Java 笔试、面试题合集：https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ（密码：lkw1）
+- ⭐ 2021 最新 Java 笔试、面试题合集：https://pan.baidu.com/s/1DE4HAu-DS80n7VOaGpU_KQ （密码：lkw1）
 
 - ⭐ 牛客面经：https://www.nowcoder.com/discuss/experience?tagId=639
 
@@ -1567,7 +1567,7 @@ JVM 的知识略显枯燥，建议先看视频，有实操的地方一定要实�
 
 - GitHub Java 专区：https://github.com/topics/java
 - GitHub Java 合集：https://github.com/akullpp/awesome-java
-- StackOverflow：https://stackoverflow.com/questions/tagged/java（解决问题必备）
+- StackOverflow：https://stackoverflow.com/questions/tagged/java （解决问题必备）
 - 掘金 Java 专区：https://juejin.cn/tag/Java
 - 美团技术团队：https://tech.meituan.com/
 - 阿里技术团队：https://102.alibaba.com/tech/list/
